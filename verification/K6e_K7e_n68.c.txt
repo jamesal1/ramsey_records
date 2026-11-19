@@ -1,0 +1,9 @@
+# 2026-11-19  checkers/check.c graphs/K6e_K7e_n68.g6 J6 J7
+checker: check.c (bitset clique search; J_s via (s-2)-clique with 2 common neighbours)
+file: graphs/K6e_K7e_n68.g6
+vertices: 68
+edges: 1020
+G contains J6: no
+complement contains J7: no
+result: VALID
+proves: R(J6, J7) >= 69

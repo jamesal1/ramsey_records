@@ -1,0 +1,9 @@
+# 2026-11-19  checkers/check_networkx.py graphs/K5e_K8_n70.g6 J5 K8
+checker: check_networkx.py (networkx 2.8.8; J_s via two (s-1)-cliques sharing s-2 vertices)
+file: graphs/K5e_K8_n70.g6
+vertices: 70
+edges: 971
+G contains J5: no
+complement contains K8: no
+result: VALID
+proves: R(J5, K8) >= 71

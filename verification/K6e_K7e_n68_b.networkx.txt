@@ -1,0 +1,9 @@
+# 2026-11-19  checkers/check_networkx.py graphs/K6e_K7e_n68_b.g6 J6 J7
+checker: check_networkx.py (networkx 2.8.8; J_s via two (s-1)-cliques sharing s-2 vertices)
+file: graphs/K6e_K7e_n68_b.g6
+vertices: 68
+edges: 1019
+G contains J6: no
+complement contains J7: no
+result: VALID
+proves: R(J6, J7) >= 69

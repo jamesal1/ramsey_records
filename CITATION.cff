@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use these graphs or bounds, please cite this dataset."
+type: dataset
+title: "New lower bounds for Ramsey numbers R(K_k - e, K_l - e) and R(K_k - e, K_l)"
+abstract: >-
+  Explicit graphs, with exact checkers, improving lower bounds in Table IIIa of
+  Radziszowski's dynamic survey Small Ramsey Numbers (DS1.18, April 2026).
+version: "1.0.0"
+date-released: "TODO-YYYY-MM-DD"
+authors:
+  - family-names: "Liu"
+    given-names: "James A."
+license: Apache-2.0
+repository-code: "https://github.com/jamesal1/ramsey_records"
+keywords:
+  - Ramsey numbers
+  - lower bounds
+  - graph theory
+  - SAT
+references:
+  - type: article
+    authors:
+      - family-names: Radziszowski
+        given-names: Stanisław P.
+    title: "Small Ramsey Numbers"
+    journal: "The Electronic Journal of Combinatorics"
+    issue: "DS1.18"
+    year: 2026
+    doi: "10.37236/21"
+  - type: article
+    authors:
+      - family-names: Goedgebeur
+        given-names: Jan
+      - family-names: Van Overberghe
+        given-names: Steven
+    title: "New bounds for Ramsey numbers R(K_k - e, K_l - e)"
+    journal: "Discrete Applied Mathematics"
+    volume: 307
+    start: 212
+    end: 221
+    year: 2022

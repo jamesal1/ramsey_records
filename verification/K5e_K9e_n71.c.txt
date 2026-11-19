@@ -1,0 +1,9 @@
+# 2026-11-19  checkers/check.c graphs/K5e_K9e_n71.g6 J5 J9
+checker: check.c (bitset clique search; J_s via (s-2)-clique with 2 common neighbours)
+file: graphs/K5e_K9e_n71.g6
+vertices: 71
+edges: 958
+G contains J5: no
+complement contains J9: no
+result: VALID
+proves: R(J5, J9) >= 72
