@@ -2,7 +2,7 @@
   "title": "New lower bounds for Ramsey numbers R(K_k - e, K_l - e) and R(K_k - e, K_l)",
   "version": "1.0.0",
   "upload_type": "dataset",
-  "description": "Explicit graphs, with exact checkers, improving lower bounds in Table IIIa of Radziszowski's dynamic survey Small Ramsey Numbers (DS1.18, April 2026). Each graph extends Van Overberghe's 64-vertex (K5-e, K7-e)-graph by vertices found with an exact SAT search. The release contains the graphs (graph6 and adjacency matrix), SHA-256 hashes, the exact difference from the base graph, three independent checkers and their outputs.",
+  "description": "Explicit graphs, with exact checkers, improving lower bounds in Table IIIa of Radziszowski's dynamic survey Small Ramsey Numbers (DS1.18, April 2026). Each graph extends Van Overberghe's 64-vertex (K5-e, K7-e)-graph by vertices found with an exact SAT search. The release contains the graphs (graph6 and adjacency matrix), SHA-256 hashes, the exact difference from the base graph, three independent checkers and their outputs. Claude (Anthropic's AI assistant) was used to generate the code for the searches, the checkers and the tools.",
   "creators": [
     {"name": "Liu, James A."}
   ],

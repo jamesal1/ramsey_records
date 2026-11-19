@@ -32,6 +32,12 @@ vertices. `records.json` lists them in `extends.added_vertices`: for each new ve
 neighbours with index below v, so an edge between two new vertices appears once, under the
 later vertex. `verify.py` rebuilds every graph from the base and that list.
 
+Claude (Anthropic's AI assistant) was used to generate the code for these searches: the SAT
+encodings, the extension search and the OpenEvolve set-up. It also generated the checkers and
+tools in this repository. The results do not depend on trusting the search code. Each graph is
+an explicit witness, and anyone can check it with the independent checkers below or with their
+own.
+
 ## Check them yourself
 
 ```bash
