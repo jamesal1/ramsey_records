@@ -7,13 +7,12 @@ A graph G on n vertices with no A in G and no B in its complement proves R(A, B)
 Here K_k − e is the complete graph on k vertices minus one edge.
 
 <!-- records-table:start -->
-| Cell | Survey bounds | New lower bound | Witness | n | Found | Checked by |
-|---|---|---|---|---|---|---|
-| R(K5-e, K8) | 69 – 117 | **71** | [`K5e_K8_n70.g6`](graphs/K5e_K8_n70.g6) | 70 | 2026-11-19 | check.c, check_networkx.py, check_sage.py |
-| R(K5-e, K8-e) | 66 – 91 | **67** | [`K5e_K8e_n66.g6`](graphs/K5e_K8e_n66.g6) | 66 | 2026-11-19 | check.c, check_networkx.py, check_sage.py |
-| R(K5-e, K9-e) | 69 – 136 | **72** | [`K5e_K9e_n71.g6`](graphs/K5e_K9e_n71.g6) | 71 | 2026-11-19 | check.c, check_networkx.py, check_sage.py |
-| R(K6-e, K7-e) | 66 – 124 | **69** | [`K6e_K7e_n68.g6`](graphs/K6e_K7e_n68.g6) | 68 | 2026-11-18 | check.c, check_networkx.py, check_sage.py |
-| R(K6-e, K7-e) | 66 – 124 | 69 (second witness) | [`K6e_K7e_n68_b.g6`](graphs/K6e_K7e_n68_b.g6) | 68 | 2026-11-19 | check.c, check_networkx.py, check_sage.py |
+| Cell | Survey bounds | New lower bound | Witness | n | Found |
+|---|---|---|---|---|---|
+| R(K5-e, K8) | 69 – 117 | **71** | [`K5e_K8_n70.g6`](graphs/K5e_K8_n70.g6) | 70 | 2026-11-19 |
+| R(K5-e, K8-e) | 66 – 91 | **67** | [`K5e_K8e_n66.g6`](graphs/K5e_K8e_n66.g6) | 66 | 2026-11-19 |
+| R(K5-e, K9-e) | 69 – 136 | **72** | [`K5e_K9e_n71.g6`](graphs/K5e_K9e_n71.g6) | 71 | 2026-11-19 |
+| R(K6-e, K7-e) | 66 – 124 | **69** | [`K6e_K7e_n68.g6`](graphs/K6e_K7e_n68.g6) | 68 | 2026-11-18 |
 <!-- records-table:end -->
 
 "Survey bounds" are the lower and upper bounds in Table IIIa. Superseded witnesses stay in

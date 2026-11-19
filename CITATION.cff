@@ -6,7 +6,7 @@ abstract: >-
   Explicit graphs, with exact checkers, improving lower bounds in Table IIIa of
   Radziszowski's dynamic survey Small Ramsey Numbers (DS1.18, April 2026).
 version: "1.0.0"
-date-released: "TODO-YYYY-MM-DD"
+date-released: "2026-11-19"
 authors:
   - family-names: "Liu"
     given-names: "James A."

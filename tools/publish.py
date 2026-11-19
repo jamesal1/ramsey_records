@@ -191,16 +191,15 @@ def _base_entry(args):
 # --------------------------------------------------------------------------- #
 
 def write_readme_table(records):
-    rows = ["| Cell | Survey bounds | New lower bound | Witness | n | Found | Checked by |",
-            "|---|---|---|---|---|---|---|"]
+    rows = ["| Cell | Survey bounds | New lower bound | Witness | n | Found |",
+            "|---|---|---|---|---|---|"]
     for r in records:
         if "superseded_by" in r:
             continue
-        checked = ", ".join(v["checker"].split("/")[-1] for v in r["verification"] if v["result"] == "VALID")
         witness = f"[`{os.path.basename(r['files']['graph6']['path'])}`]({r['files']['graph6']['path']})"
         new = f"**{r['lower_bound']}**" if not r.get("second_witness") else f"{r['lower_bound']} (second witness)"
         rows.append(f"| {r['cell']} | {r['previous_lower_bound']} – {r['upper_bound']} | {new} | {witness} "
-                    f"| {r['vertices']} | {r['found']} | {checked} |")
+                    f"| {r['vertices']} | {r['found']} |")
     table = "\n".join(rows)
     text = open(README).read()
     if TABLE_START not in text or TABLE_END not in text:
