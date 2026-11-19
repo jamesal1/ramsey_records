@@ -9,9 +9,10 @@ Here K_k − e is the complete graph on k vertices minus one edge.
 <!-- records-table:start -->
 | Cell | Survey bounds | New lower bound | Witness | n | Found |
 |---|---|---|---|---|---|
-| R(K5-e, K8) | 69 – 117 | **71** | [`K5e_K8_n70.g6`](graphs/K5e_K8_n70.g6) | 70 | 2026-11-19 |
+| R(K5-e, K8) | 69 – 117 | **72** | [`K5e_K8_n71.g6`](graphs/K5e_K8_n71.g6) | 71 | 2026-11-20 |
 | R(K5-e, K8-e) | 66 – 91 | **67** | [`K5e_K8e_n66.g6`](graphs/K5e_K8e_n66.g6) | 66 | 2026-11-19 |
-| R(K5-e, K9-e) | 69 – 136 | **72** | [`K5e_K9e_n71.g6`](graphs/K5e_K9e_n71.g6) | 71 | 2026-11-19 |
+| R(K5-e, K9) | 75 – 169 | **80** | [`K5e_K9_n79.g6`](graphs/K5e_K9_n79.g6) | 79 | 2026-11-20 |
+| R(K5-e, K9-e) | 69 – 136 | **77** | [`K5e_K9e_n76.g6`](graphs/K5e_K9e_n76.g6) | 76 | 2026-11-19 |
 | R(K6-e, K7-e) | 66 – 124 | **69** | [`K6e_K7e_n68.g6`](graphs/K6e_K7e_n68.g6) | 68 | 2026-11-18 |
 <!-- records-table:end -->
 
@@ -25,6 +26,18 @@ proves R(K5 − e, K7 − e) = 65 ([circulant-Ramsey](https://github.com/Steven-
 `RamseyGraphs/Jn/`). Vertices 0–63 of each witness are that graph, with its labelling and every
 edge unchanged. The new vertices and their neighbourhoods were found by an exact SAT search
 (CaDiCaL through PySAT, cube-and-conquer with lexicographic symmetry breaking).
+
+The witnesses for R(K5 − e, K8), R(K5 − e, K9) and R(K5 − e, K9 − e) started from a disjoint
+union of that graph with a small graph: K4, a 10-vertex graph with no K5 − e and a
+triangle-free complement, and the octahedron, respectively. The complement of a disjoint union
+is a join, so its largest clique and largest "clique minus an edge" can be computed from the
+parts, and each union already matches or beats the survey bound. From there, each SAT step
+deleted up to d of the added vertices and added d + 1 new ones (d ≤ 2), repeated until no such
+step existed. Vertices 0–63 are never deleted, so the final graph is still the base graph plus
+new vertices.
+
+The 79-vertex witness for R(K5 − e, K9) also has no K10 − e in its complement, so it shows
+R(K5 − e, K10 − e) ≥ 80 as well. DS1.18 prints no lower bound for that cell.
 
 So each record is fully described by the base graph plus the neighbourhoods of the new
 vertices. `records.json` lists them in `extends.added_vertices`: for each new vertex v, its
