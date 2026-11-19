@@ -170,10 +170,13 @@
         "result": "VALID",
         "log": "verification/K5e_K8_n70.networkx.txt",
         "date": "2026-11-19"
+      },
+      {
+        "checker": "checkers/check_sage.py",
+        "result": "VALID",
+        "log": "verification/K5e_K8_n70.sage.txt",
+        "date": "2026-11-19"
       }
-    ],
-    "verification_skipped": [
-      "checkers/check_sage.py"
     ]
   },
   {
@@ -267,10 +270,13 @@
         "result": "VALID",
         "log": "verification/K5e_K8e_n66.networkx.txt",
         "date": "2026-11-19"
+      },
+      {
+        "checker": "checkers/check_sage.py",
+        "result": "VALID",
+        "log": "verification/K5e_K8e_n66.sage.txt",
+        "date": "2026-11-19"
       }
-    ],
-    "verification_skipped": [
-      "checkers/check_sage.py"
     ]
   },
   {
@@ -433,10 +439,13 @@
         "result": "VALID",
         "log": "verification/K5e_K9e_n71.networkx.txt",
         "date": "2026-11-19"
+      },
+      {
+        "checker": "checkers/check_sage.py",
+        "result": "VALID",
+        "log": "verification/K5e_K9e_n71.sage.txt",
+        "date": "2026-11-19"
       }
-    ],
-    "verification_skipped": [
-      "checkers/check_sage.py"
     ]
   },
   {
@@ -655,10 +664,13 @@
         "result": "VALID",
         "log": "verification/K6e_K7e_n68.networkx.txt",
         "date": "2026-11-19"
+      },
+      {
+        "checker": "checkers/check_sage.py",
+        "result": "VALID",
+        "log": "verification/K6e_K7e_n68.sage.txt",
+        "date": "2026-11-19"
       }
-    ],
-    "verification_skipped": [
-      "checkers/check_sage.py"
     ]
   },
   {
@@ -877,10 +889,13 @@
         "result": "VALID",
         "log": "verification/K6e_K7e_n68_b.networkx.txt",
         "date": "2026-11-19"
+      },
+      {
+        "checker": "checkers/check_sage.py",
+        "result": "VALID",
+        "log": "verification/K6e_K7e_n68_b.sage.txt",
+        "date": "2026-11-19"
       }
-    ],
-    "verification_skipped": [
-      "checkers/check_sage.py"
     ]
   }
 ]

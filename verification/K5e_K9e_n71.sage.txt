@@ -1,0 +1,9 @@
+# 2026-11-19  checkers/check_sage.py graphs/K5e_K9e_n71.g6 J5 J9
+checker: check_sage.py (SageMath 10.10; Sage graph6/matrix readers, Cliquer clique number, non-induced subgraph_search)
+file: graphs/K5e_K9e_n71.g6
+vertices: 71
+edges: 958
+G contains J5: no
+complement contains J9: no
+result: VALID
+proves: R(J5, J9) >= 72

@@ -8,18 +8,40 @@ Method (independent of check.c and check_networkx.py):
        non-induced subgraph search, i.e. the definition of containment.
 Every witness is re-verified by counting edges on its vertex set.
 
+The graph file is read by Sage's own graph6 and adjacency-matrix readers, so this checker
+shares no code with the other two, not even file parsing.
+
 Usage (with Sage's Python):  sage -python checkers/check_sage.py graphs/K6e_K7e_n68.g6 J6 J7
 Exit status: 0 valid, 1 invalid, 2 usage or input error.
 """
 
 import itertools
-import os
+import re
 import sys
 
-from sage.all import Graph, graphs, version
+from sage.all import ZZ, Graph, graphs, matrix
+from sage.version import version
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from graph_io import load_graph, parse_forbidden  # noqa: E402
+
+def parse_forbidden(spec):
+    m = re.fullmatch(r"([KJ])(\d+)", spec.strip().upper())
+    if not m or int(m.group(2)) < 3:
+        raise ValueError(f"forbidden graph must look like K6 or J7, got {spec!r}")
+    return m.group(1), int(m.group(2))
+
+
+def load_graph(path):
+    """Read a graph6 string or a 0/1 adjacency matrix with Sage's own readers."""
+    with open(path) as f:
+        lines = [ln.strip() for ln in f if ln.strip()]
+    if not lines:
+        raise ValueError("empty graph file")
+    if lines[0][0] in "01":
+        rows = [[int(c) for c in re.sub(r"[\s,]", "", ln)] for ln in lines]
+        return Graph(matrix(ZZ, rows), format="adjacency_matrix")
+    if len(lines) != 1:
+        raise ValueError(f"expected exactly one graph6 string, found {len(lines)} lines")
+    return Graph(lines[0], format="graph6")
 
 
 def find_forbidden(H, kind, s):
@@ -44,15 +66,18 @@ def main():
     path = sys.argv[1]
     try:
         forb = [parse_forbidden(sys.argv[2]), parse_forbidden(sys.argv[3])]
-        n, edges = load_graph(path)
-    except (OSError, ValueError) as e:
+        G = load_graph(path)
+    except (OSError, ValueError, TypeError) as e:
         print(f"error: {e}", file=sys.stderr)
         return 2
-    G = Graph(n)
-    G.add_edges(edges)
-    print(f"checker: check_sage.py ({version()}; Cliquer clique number, non-induced subgraph_search)")
+    if G.has_loops() or G.has_multiple_edges():
+        print("error: graph has loops or multiple edges", file=sys.stderr)
+        return 2
+    n = G.order()
+    print(f"checker: check_sage.py (SageMath {version}; Sage graph6/matrix readers, "
+          f"Cliquer clique number, non-induced subgraph_search)")
     print(f"file: {path}")
-    print(f"vertices: {n}\nedges: {len(edges)}")
+    print(f"vertices: {n}\nedges: {G.size()}")
     bad = False
     for H, (kind, s), where in ((G, forb[0], "G"), (G.complement(), forb[1], "complement")):
         w = find_forbidden(H, kind, s)

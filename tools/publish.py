@@ -211,6 +211,39 @@ def write_readme_table(records):
         f.write(f"{pre}{TABLE_START}\n{table}\n{TABLE_END}{post}")
 
 
+def cmd_add_checker(args):
+    """Run one more checker on existing records and record its result and log."""
+    if args.checker not in CHECKERS:
+        sys.exit(f"unknown checker {args.checker!r}")
+    if not checker_available(args.checker):
+        sys.exit(f"checker {args.checker!r} is not available on this machine")
+    records = load_records()
+    name = CHECKERS[args.checker][0]
+    today = datetime.date.today().isoformat()
+    failed = False
+    for r in records:
+        if args.ids and r["id"] not in args.ids:
+            continue
+        g6 = os.path.join(ROOT, r["files"]["graph6"]["path"])
+        status, out = run_checker(args.checker, g6, r["g_avoids"], r["complement_avoids"])
+        log = os.path.join(ROOT, "verification", f"{r['id']}.{args.checker}.txt")
+        with open(log, "w") as f:
+            f.write(f"# {today}  {name} {rel(g6)} {r['g_avoids']} {r['complement_avoids']}\n{out}")
+        print(f"  {r['id']:16s} {status}")
+        r["verification"] = [v for v in r["verification"] if v["checker"] != name]
+        r["verification"].append({"checker": name, "result": status, "log": rel(log), "date": today})
+        skipped = [c for c in r.get("verification_skipped", []) if c != name]
+        if skipped:
+            r["verification_skipped"] = skipped
+        else:
+            r.pop("verification_skipped", None)
+        failed |= status != "VALID"
+    save_records(records)
+    write_readme_table(records)
+    if failed:
+        sys.exit(f"{name} did NOT confirm every record; see verification/")
+
+
 def cmd_readme(_args):
     write_readme_table(load_records())
     print("README.md table regenerated")
@@ -263,6 +296,10 @@ def main():
     p.add_argument("--checkers", default="c,networkx,sage", help="comma list from: " + ",".join(CHECKERS))
     p.add_argument("--second-witness", action="store_true", help="another witness for an existing bound")
     p.set_defaults(func=cmd_add)
+    p = sub.add_parser("add-checker", help="run another checker on existing records and record it")
+    p.add_argument("checker", help="one of: " + ",".join(CHECKERS))
+    p.add_argument("ids", nargs="*", help="record ids (default: all)")
+    p.set_defaults(func=cmd_add_checker)
     sub.add_parser("readme", help="regenerate the README table").set_defaults(func=cmd_readme)
     sub.add_parser("release-check", help="check the repository is ready to tag").set_defaults(func=cmd_release_check)
     args = ap.parse_args()

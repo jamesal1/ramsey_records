@@ -40,6 +40,14 @@ This tool:
 A new base graph needs `--base-source URL` once. It is copied into `bases/` and its hash is
 pinned in `bases/sources.json`.
 
+To add a checker's result to existing records later (for example Sage, run on another
+machine), run `python tools/publish.py add-checker sage` there, then copy `records.json`,
+`README.md` and the new `verification/*.sage.txt` files back. Sage installs cleanly from
+conda-forge on Linux (`conda create -n sage -c conda-forge sage`). It needs the environment's
+`bin` on `PATH` (it starts a `gap` binary), so set
+`PATH=$HOME/miniconda3/envs/sage/bin:$PATH` and
+`RAMSEY_SAGE_PYTHON=$HOME/miniconda3/envs/sage/bin/python`.
+
 ## 3. Verify from scratch
 
 ```bash
