@@ -1,0 +1,9 @@
+# 2026-11-24  checkers/check.c graphs/K6_K8e_n116.g6 J7 J8
+checker: check.c (bitset clique search; J_s via (s-2)-clique with 2 common neighbours)
+file: graphs/K6_K8e_n116.g6
+vertices: 116
+edges: 3248
+G contains J7: no
+complement contains J8: no
+result: VALID
+proves: R(J7, J8) >= 117

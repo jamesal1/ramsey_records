@@ -1,5 +1,1623 @@
 [
   {
+    "id": "K4e_K11_n55",
+    "cell": "R(K4-e, K11)",
+    "g_avoids": "J4",
+    "complement_avoids": "K11",
+    "lower_bound": 56,
+    "vertices": 55,
+    "edges": 385,
+    "files": {
+      "graph6": {
+        "path": "graphs/K4e_K11_n55.g6",
+        "sha256": "03989e4659c69e9f70f4f79b1b8e3e8eaba5a95d9199d0fafa5c90e02eb4c8cf"
+      },
+      "matrix": {
+        "path": "graphs/K4e_K11_n55.txt",
+        "sha256": "0518429ed924a6cff667913dbdb3014b588eb081f349543222ee50252b46fdad"
+      }
+    },
+    "previous_lower_bound": 52,
+    "previous_source": "disjoint union of Van Overberghe's 48-vertex (K4-e, K10)-graph and a triangle (the complement of the union has clique number one more than the 48-vertex graph's complement); DS1.18 prints no bound for this cell",
+    "upper_bound": null,
+    "upper_source": null,
+    "found": "2026-11-22",
+    "method_short": "Cayley graph on SmallGroup(55,1)",
+    "method": "Cayley graph on SmallGroup(55,1), from a SAT sweep (CaDiCaL 1.5.3) over the non-abelian groups of each order.",
+    "page": "records/K4e_K11_n55.md",
+    "structure": {
+      "description": "Cayley graph on GAP's SmallGroup(55,1) (vertex i is GAP's i-th element, 0-based)."
+    },
+    "invariants": {
+      "min_degree": 14,
+      "max_degree": 14,
+      "canonical_graph6_nauty": "vsaCKA?_KAO?_@c?P???A??KW?Oo?Q?Gd?AL?BOG?dAcK?rOOccOHBAJ?B?_HEI@?pGgGDDCg_DDE`GOeOISOKoETHI@QaPE_Da`d`ADHOKcASd?XADaA?kQ@qA?`GqIBP?GeGgkO?|?GOI_Ht?_Oi?a?yWK?WL?YqD?QEAwoGWGWOjHADAB@@TWGo`G_DTGHOcG_IdQIc_??E`UIH_??IVEO??io@TXK??Am?PIjQG?A?IAihW_?G?gG",
+      "automorphism_group_size": 110
+    },
+    "verification": [
+      {
+        "checker": "checkers/check.c",
+        "result": "VALID",
+        "log": "verification/K4e_K11_n55.c.txt",
+        "date": "2026-11-24"
+      },
+      {
+        "checker": "checkers/check_networkx.py",
+        "result": "VALID",
+        "log": "verification/K4e_K11_n55.networkx.txt",
+        "date": "2026-11-24"
+      }
+    ],
+    "also_proves": [
+      {
+        "cell": "R(K4-e, K12-e)",
+        "g_avoids": "J4",
+        "complement_avoids": "J12",
+        "lower_bound": 56,
+        "previous_lower_bound": 52,
+        "previous_source": "R(K4-e, K11) >= 52 (VO48 plus a disjoint triangle), since K12-e contains K11; DS1.18 prints no bound for this cell",
+        "upper_bound": null,
+        "upper_source": null,
+        "reason": "K12-e contains K11, so a complement with no K11 has no K12-e.",
+        "verification": [
+          {
+            "checker": "checkers/check.c",
+            "result": "VALID",
+            "log": "verification/K4e_K11_n55.K4e_K12e.c.txt",
+            "date": "2026-11-24"
+          }
+        ],
+        "prior_verification": "checked with an exact Python checker and jcheck.c when found (2026-11-22)"
+      }
+    ]
+  },
+  {
+    "id": "K4e_K12_n59",
+    "cell": "R(K4-e, K12)",
+    "g_avoids": "J4",
+    "complement_avoids": "K12",
+    "lower_bound": 60,
+    "vertices": 59,
+    "edges": 423,
+    "files": {
+      "graph6": {
+        "path": "graphs/K4e_K12_n59.g6",
+        "sha256": "4482fa3282d9f8decc49dbff85b7b26d018beef70456efc7bf14e2fac2b32ed2"
+      },
+      "matrix": {
+        "path": "graphs/K4e_K12_n59.txt",
+        "sha256": "e760c7898a103eec3374cd2d77a93fe91b5cf68379b0903ef4c7b0bf56ed8947"
+      }
+    },
+    "previous_lower_bound": 58,
+    "previous_source": "Van Overberghe's 57-vertex (K4-e, K12)-graph J4K12n57 (github.com/Steven-VO/circulant-Ramsey, RamseyGraphs/Jn); DS1.18 prints no bound for this cell",
+    "upper_bound": null,
+    "upper_source": null,
+    "found": "2026-11-20",
+    "method_short": "VO48 \u2294 6-vertex graph, then a SAT ladder",
+    "method": "Disjoint union of Van Overberghe's 48-vertex (K4-e, K10)-graph and a 6-vertex graph with no K4-e whose complement is triangle-free (a 54-vertex (K4-e, K12)-graph), then exact SAT steps that delete up to 3 of the added vertices and add one more than they delete, up to 59 vertices. Vertices 0-47 and all their edges are unchanged.",
+    "page": "records/K4e_K12_n59.md",
+    "extends": {
+      "base": "bases/VO_J4K10n48.g6",
+      "base_sha256": "cc708d8677b2e9ee6439f82a44c07fc53638022e24a0e86cc635c5a9e5fa9ee7",
+      "base_source": "https://github.com/Steven-VO/circulant-Ramsey/blob/master/RamseyGraphs/Jn/J4K10n48.g6",
+      "base_vertices": 48,
+      "base_edges_removed": [],
+      "base_edges_added": [],
+      "added_vertices": {
+        "48": [
+          3,
+          6,
+          7,
+          12,
+          13,
+          29,
+          34,
+          38
+        ],
+        "49": [
+          1,
+          9,
+          10,
+          18,
+          28,
+          44
+        ],
+        "50": [
+          2,
+          4,
+          13,
+          20,
+          24,
+          35,
+          39,
+          43,
+          48,
+          49
+        ],
+        "51": [
+          11,
+          17,
+          20,
+          22,
+          32,
+          33,
+          36,
+          40,
+          48,
+          49
+        ],
+        "52": [
+          1,
+          5,
+          23,
+          27,
+          35,
+          42,
+          46,
+          48
+        ],
+        "53": [
+          2,
+          8,
+          10,
+          20,
+          24,
+          29,
+          43,
+          45,
+          48
+        ],
+        "54": [
+          7,
+          8,
+          14,
+          16,
+          26,
+          30,
+          37,
+          42,
+          48,
+          49
+        ],
+        "55": [
+          0,
+          6,
+          15,
+          16,
+          22,
+          26,
+          27,
+          32,
+          41,
+          47,
+          49,
+          50,
+          52,
+          53
+        ],
+        "56": [
+          0,
+          9,
+          10,
+          16,
+          28,
+          32,
+          39,
+          44,
+          50,
+          51,
+          52,
+          53,
+          54
+        ],
+        "57": [
+          3,
+          4,
+          21,
+          22,
+          25,
+          26,
+          31,
+          34,
+          45,
+          50,
+          51,
+          54
+        ],
+        "58": [
+          3,
+          12,
+          13,
+          18,
+          19,
+          35,
+          38,
+          49,
+          52,
+          53,
+          57
+        ]
+      }
+    },
+    "invariants": {
+      "min_degree": 11,
+      "max_degree": 16,
+      "canonical_graph6_nauty": "zYOaC}]M_O@?A?A?@???A?@??Q??bW_H??Gl?Cg?_FOA@EOG?N?_@oGo?PGS?WeSp_EG?D?ApoG_?B_AOEEOEIHD?@_PVG?KWcP?A`KaK??HHAJG?jo?@_AG?UOVOC}??G@?TCIGGP?`?sRIY@Cc?Egq@OQaC?qO?{?DwO_@PDba?`AAGg_UECHBYG?W?o?FR?PS?W@DMGwC?AC??PVB@_[C@GaHBhAG?RA`IJ?GO@MKDF@?_`?CPqMEqH@?B_@O{G`QW?@V@OhGrok??_GjDC^w?M??@A?",
+      "automorphism_group_size": 1
+    },
+    "verification": [
+      {
+        "checker": "checkers/check.c",
+        "result": "VALID",
+        "log": "verification/K4e_K12_n59.c.txt",
+        "date": "2026-11-24"
+      },
+      {
+        "checker": "checkers/check_networkx.py",
+        "result": "VALID",
+        "log": "verification/K4e_K12_n59.networkx.txt",
+        "date": "2026-11-24"
+      }
+    ]
+  },
+  {
+    "id": "K4e_K13_n64",
+    "cell": "R(K4-e, K13)",
+    "g_avoids": "J4",
+    "complement_avoids": "K13",
+    "lower_bound": 65,
+    "vertices": 64,
+    "edges": 448,
+    "files": {
+      "graph6": {
+        "path": "graphs/K4e_K13_n64.g6",
+        "sha256": "e8bd2b1898508359cd4940e3aa4dbb4769d883788997050e9af7991785f08ad7"
+      },
+      "matrix": {
+        "path": "graphs/K4e_K13_n64.txt",
+        "sha256": "82f068dd6c29a9e39f2af8db4623d2172dd1c54fe5166fb281f8009b015ab287"
+      }
+    },
+    "previous_lower_bound": 61,
+    "previous_source": "R(3,13) >= 61 (S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table I [NaRT]), since K4-e contains K3; DS1.18 prints no bound for this cell",
+    "upper_bound": null,
+    "upper_source": null,
+    "found": "2026-11-22",
+    "method_short": "Cayley graph on SmallGroup(64,4)",
+    "method": "Cayley graph on SmallGroup(64,4), from a SAT sweep (CaDiCaL 1.5.3) over the non-abelian groups of each order.",
+    "page": "records/K4e_K13_n64.md",
+    "structure": {
+      "description": "Cayley graph on GAP's SmallGroup(64,4) (vertex i is GAP's i-th element, 0-based)."
+    },
+    "invariants": {
+      "min_degree": 14,
+      "max_degree": 14,
+      "canonical_graph6_nauty": "~?@?saCCA?_C?O?_@_AOA?P?C_C@?_OAQ?_O?S??@I_?Sl?SGEAG_CCI?QB?GgOaCC?OQCC?EOEBG`_D?OOPAGcAP@IW?OsP@__HCEOg@DCOA?bC?L`HO_CWhHOCCIA?[Ob?_QSOOG_?CocE??sQ`CG_J?aI_O[ASGi@?GAKAF@@@AH?AKCDBQ?G?cSW??PE@RBP__GGO`T??QO@?MH@?@[R?Ho?`_@XAD?tC?`GO?cSGGhOi?@CB`Bo?EK?Ec_bA?X_?_KpCS?GggMGGE?KaAoBQGPAJ??GoKGT@coAAA?JCb@U@A?O?ZGP[CA_??OC\\C[O??AH_B_wkK?B?G??",
+      "automorphism_group_size": 64
+    },
+    "verification": [
+      {
+        "checker": "checkers/check.c",
+        "result": "VALID",
+        "log": "verification/K4e_K13_n64.c.txt",
+        "date": "2026-11-24"
+      },
+      {
+        "checker": "checkers/check_networkx.py",
+        "result": "VALID",
+        "log": "verification/K4e_K13_n64.networkx.txt",
+        "date": "2026-11-24"
+      }
+    ],
+    "also_proves": [
+      {
+        "cell": "R(K4-e, K14-e)",
+        "g_avoids": "J4",
+        "complement_avoids": "J14",
+        "lower_bound": 65,
+        "previous_lower_bound": 61,
+        "previous_source": "R(3,13) >= 61 (S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table I [NaRT]), since K4-e contains K3 and K14-e contains K13; DS1.18 prints no bound for this cell",
+        "upper_bound": null,
+        "upper_source": null,
+        "reason": "K14-e contains K13, so a complement with no K13 has no K14-e.",
+        "verification": [
+          {
+            "checker": "checkers/check.c",
+            "result": "VALID",
+            "log": "verification/K4e_K13_n64.K4e_K14e.c.txt",
+            "date": "2026-11-24"
+          }
+        ],
+        "prior_verification": "checked with an exact Python checker and jcheck.c when found (2026-11-22)"
+      }
+    ]
+  },
+  {
+    "id": "K4e_K14_n75",
+    "cell": "R(K4-e, K14)",
+    "g_avoids": "J4",
+    "complement_avoids": "K14",
+    "lower_bound": 76,
+    "vertices": 75,
+    "edges": 600,
+    "files": {
+      "graph6": {
+        "path": "graphs/K4e_K14_n75.g6",
+        "sha256": "7282d49c9799516ef1200346ed25a095f94b68306de6e3671b10db6f59eec208"
+      },
+      "matrix": {
+        "path": "graphs/K4e_K14_n75.txt",
+        "sha256": "539724a0eb97971c7a801986480cf37df8dc2db4383c8f1c9da591d0b40869a6"
+      }
+    },
+    "previous_lower_bound": 67,
+    "previous_source": "R(3,14) >= 67 (S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table I [Kol2]), since K4-e contains K3; DS1.18 prints no bound for this cell",
+    "upper_bound": null,
+    "upper_source": null,
+    "found": "2026-11-22",
+    "method_short": "Cayley graph on SmallGroup(75,2)",
+    "method": "Cayley graph on SmallGroup(75,2), from a SAT sweep (CaDiCaL 1.5.3) over the non-abelian groups of each order.",
+    "page": "records/K4e_K14_n75.md",
+    "structure": {
+      "description": "Cayley graph on GAP's SmallGroup(75,2) (vertex i is GAP's i-th element, 0-based)."
+    },
+    "invariants": {
+      "min_degree": 16,
+      "max_degree": 16,
+      "canonical_graph6_nauty": "~?@JsaCCA?_C?O?_O_CO@C@?_@?O??O?GC?GC?BE???K??I_??I_?@COWGaAECO_OpCCGaG_OF?a?QOaGORAAH?GM@D?ADGPC?P_QGG?WBO_c?`K`AA?ca`OO?SKOaO?CUCH?_@QB?`C_D_cAO_OHcGECG?GYGD?Q?CSSAH?_KOCaAKGP_SCQ?w@E?cPAHAOKCAa@o`?KGOaGgQ?Cg@ICCSP@GGaa?PoCHGGS@_SK?cQ@OPE@@@GQA_OiGGAE@@__OdEDAa?p?S@e_OaAK@O`cSACI@`CAWoGGQAE@CDH`?QOPAKG_aEGQCHAEP?O[AHC@`GoAE?oaOKGR?POCS_QADABCP@HO@w????F~_??BK??B~o??????FxoFo????G@{BX{?????C?^@M?@{????_?Fuo??^???CIN_OO???Fo?GI?~@?????^?HG~?H??????}AG_^GO??Bw??AG",
+      "automorphism_group_size": 750
+    },
+    "verification": [
+      {
+        "checker": "checkers/check.c",
+        "result": "VALID",
+        "log": "verification/K4e_K14_n75.c.txt",
+        "date": "2026-11-24"
+      }
+    ],
+    "prior_verification": "checked with an exact Python checker and jcheck.c when found (2026-11-22)",
+    "also_proves": [
+      {
+        "cell": "R(K4-e, K15-e)",
+        "g_avoids": "J4",
+        "complement_avoids": "J15",
+        "lower_bound": 76,
+        "previous_lower_bound": 69,
+        "previous_source": "R(K3, K15-e) >= 69 (S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIb [WWY2]), since K4-e contains K3; DS1.18 prints no bound for this cell",
+        "upper_bound": null,
+        "upper_source": null,
+        "reason": "K15-e contains K14, so a complement with no K14 has no K15-e.",
+        "verification": [
+          {
+            "checker": "checkers/check.c",
+            "result": "VALID",
+            "log": "verification/K4e_K14_n75.K4e_K15e.c.txt",
+            "date": "2026-11-24"
+          }
+        ],
+        "prior_verification": "checked with an exact Python checker and jcheck.c when found (2026-11-22)"
+      }
+    ]
+  },
+  {
+    "id": "K4e_K15_n80",
+    "cell": "R(K4-e, K15)",
+    "g_avoids": "J4",
+    "complement_avoids": "K15",
+    "lower_bound": 81,
+    "vertices": 80,
+    "edges": 760,
+    "files": {
+      "graph6": {
+        "path": "graphs/K4e_K15_n80.g6",
+        "sha256": "cbf5f2be7408a482e9ec5e7efa33678f9baf006c65ceb482f8e8a432d1d24a38"
+      },
+      "matrix": {
+        "path": "graphs/K4e_K15_n80.txt",
+        "sha256": "bdb56400d401d3bf219abf48c7810f64c3d77856333935742fe1bd1fbfc30385"
+      }
+    },
+    "previous_lower_bound": 74,
+    "previous_source": "R(3,15) >= 74 (S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table I [Kol2]), since K4-e contains K3; DS1.18 prints no bound for this cell",
+    "upper_bound": null,
+    "upper_source": null,
+    "found": "2026-11-22",
+    "method_short": "Cayley graph on SmallGroup(80,3)",
+    "method": "Cayley graph on SmallGroup(80,3), from a SAT sweep (CaDiCaL 1.5.3) over the non-abelian groups of each order.",
+    "page": "records/K4e_K15_n80.md",
+    "structure": {
+      "description": "Cayley graph on GAP's SmallGroup(80,3) (vertex i is GAP's i-th element, 0-based)."
+    },
+    "invariants": {
+      "min_degree": 19,
+      "max_degree": 19,
+      "canonical_graph6_nauty": "~?@OsaCCAA`C_O?_@a?O?D??_OA??c??C??C?@C?@?_?D?_??g?G?a??CW?@@?wA_?i?cAI?L??RGQ?g?Pc?C@KQP?EE??w_L@O?R_CA_IA`B@@K@eAL@?DacHI?d?MYH@`@r?WIAICh@UC?NA?@OCKA@KhAOI_R_G_JGOEAsGBAOc`K?Ax?KQOD@CSSC_gjAGFE?[_EKO@SICb?GBUC_hGOI@aKQGUA?[__[c_?AD?igVB??@?AVCG?PwCOUgCA?Gr@W?{ggCCB@GC_t?LAQA@GU@b@?AW_gBQa@_A@]?_@BQaO_K@IEDGW`IAIsA?@c`PIC_KKP?XP`gB_?_a_[Go_NAG?_R@ScSGXWACBGBcgBD_G@CCCaqcGm?_O_@C?CHxOH?c?PCBB`EQCG?AL_QOkAqPk?EOC?ACZ_KoQ?OqAC?W_rSo_c@?HS?Qsgho@?Go?@I@QVKOGg?G?X?@BwKQ?c_?Oo@PTpPOMA?H`GC?@|_EP_a?W__??aHU{QBQ?A??CGBBvB@GEG??H?_?",
+      "automorphism_group_size": 80
+    },
+    "verification": [
+      {
+        "checker": "checkers/check.c",
+        "result": "VALID",
+        "log": "verification/K4e_K15_n80.c.txt",
+        "date": "2026-11-24"
+      }
+    ],
+    "prior_verification": "checked with an exact Python checker and jcheck.c when found (2026-11-22)"
+  },
+  {
+    "id": "K5_K12_n224",
+    "cell": "R(K5, K12)",
+    "g_avoids": "K5",
+    "complement_avoids": "K12",
+    "lower_bound": 225,
+    "vertices": 224,
+    "edges": 9296,
+    "files": {
+      "graph6": {
+        "path": "graphs/K5_K12_n224.g6",
+        "sha256": "c0779a5ace8c663c227552dc72fc1a040b58c76dc8679dc5fdbb22c7f902659d"
+      },
+      "matrix": {
+        "path": "graphs/K5_K12_n224.txt",
+        "sha256": "5ce7ac0630469b9a4f7b0e64c5eeb5007aa7afca869c4e08729f48d3fcf5b100"
+      }
+    },
+    "previous_lower_bound": 203,
+    "previous_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table I, lower bound [Kuz]",
+    "upper_bound": 672,
+    "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table I, upper bound [AnM3/AnM4]",
+    "found": "2026-11-24",
+    "method_short": "Cayley graph on Z16 \u00d7 Z2 \u00d7 Z7 (multiplier orbits)",
+    "method": "Cayley graph on Z16 x Z2 x Z7 whose connection set is a union of orbits of the multiplier x -> 31x (order 6), leaving 49 SAT variables; solved in 176 s.",
+    "page": "records/K5_K12_n224.md",
+    "structure": {
+      "type": "abelian_cayley",
+      "group": [
+        16,
+        2,
+        7
+      ],
+      "connection_set": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          1,
+          4
+        ],
+        [
+          0,
+          1,
+          5
+        ],
+        [
+          0,
+          1,
+          6
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          3
+        ],
+        [
+          1,
+          0,
+          5
+        ],
+        [
+          1,
+          0,
+          6
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          1,
+          4
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          4
+        ],
+        [
+          3,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          0
+        ],
+        [
+          4,
+          0,
+          3
+        ],
+        [
+          4,
+          0,
+          5
+        ],
+        [
+          4,
+          0,
+          6
+        ],
+        [
+          4,
+          1,
+          1
+        ],
+        [
+          4,
+          1,
+          2
+        ],
+        [
+          4,
+          1,
+          4
+        ],
+        [
+          5,
+          0,
+          0
+        ],
+        [
+          5,
+          1,
+          3
+        ],
+        [
+          5,
+          1,
+          5
+        ],
+        [
+          5,
+          1,
+          6
+        ],
+        [
+          6,
+          0,
+          1
+        ],
+        [
+          6,
+          0,
+          2
+        ],
+        [
+          6,
+          0,
+          4
+        ],
+        [
+          6,
+          1,
+          0
+        ],
+        [
+          7,
+          0,
+          3
+        ],
+        [
+          7,
+          0,
+          5
+        ],
+        [
+          7,
+          0,
+          6
+        ],
+        [
+          7,
+          1,
+          1
+        ],
+        [
+          7,
+          1,
+          2
+        ],
+        [
+          7,
+          1,
+          3
+        ],
+        [
+          7,
+          1,
+          4
+        ],
+        [
+          7,
+          1,
+          5
+        ],
+        [
+          7,
+          1,
+          6
+        ],
+        [
+          8,
+          0,
+          0
+        ],
+        [
+          8,
+          1,
+          0
+        ],
+        [
+          9,
+          0,
+          1
+        ],
+        [
+          9,
+          0,
+          2
+        ],
+        [
+          9,
+          0,
+          4
+        ],
+        [
+          9,
+          1,
+          1
+        ],
+        [
+          9,
+          1,
+          2
+        ],
+        [
+          9,
+          1,
+          3
+        ],
+        [
+          9,
+          1,
+          4
+        ],
+        [
+          9,
+          1,
+          5
+        ],
+        [
+          9,
+          1,
+          6
+        ],
+        [
+          10,
+          0,
+          3
+        ],
+        [
+          10,
+          0,
+          5
+        ],
+        [
+          10,
+          0,
+          6
+        ],
+        [
+          10,
+          1,
+          0
+        ],
+        [
+          11,
+          0,
+          0
+        ],
+        [
+          11,
+          1,
+          1
+        ],
+        [
+          11,
+          1,
+          2
+        ],
+        [
+          11,
+          1,
+          4
+        ],
+        [
+          12,
+          0,
+          1
+        ],
+        [
+          12,
+          0,
+          2
+        ],
+        [
+          12,
+          0,
+          4
+        ],
+        [
+          12,
+          1,
+          3
+        ],
+        [
+          12,
+          1,
+          5
+        ],
+        [
+          12,
+          1,
+          6
+        ],
+        [
+          13,
+          0,
+          0
+        ],
+        [
+          13,
+          1,
+          0
+        ],
+        [
+          14,
+          0,
+          0
+        ],
+        [
+          14,
+          1,
+          0
+        ],
+        [
+          14,
+          1,
+          3
+        ],
+        [
+          14,
+          1,
+          5
+        ],
+        [
+          14,
+          1,
+          6
+        ],
+        [
+          15,
+          0,
+          0
+        ],
+        [
+          15,
+          0,
+          1
+        ],
+        [
+          15,
+          0,
+          2
+        ],
+        [
+          15,
+          0,
+          4
+        ],
+        [
+          15,
+          1,
+          3
+        ],
+        [
+          15,
+          1,
+          5
+        ],
+        [
+          15,
+          1,
+          6
+        ]
+      ]
+    },
+    "invariants": {
+      "min_degree": 83,
+      "max_degree": 83,
+      "canonical_graph6_nauty": "~?B_{eCCA?_C?O__G_OOOC?__AACCCAACC@A?GH_G`C?_cO_@`_GGc_ADGOGOWC?g@O__OSASWCgCf?E_CGG?sa?GLCG_CCgWC@CKHAOGGHBA__GKoGc@E?iBq?[?iMDHK@@h@pH_OK_r@POPIHUCPSKCIdAagAY@UaGgMCOk`?D?mrdc@A?jjoRO@_CtTpc_OG`V\\DG_CAAyfaoOOOGymQWEWoHOCB[Tiw?s@?[\\RuxCw_WIAFjpLOPGW@Fn_Uq?caGBvYDi@AEG?|yDsCPCGOFfwFg@OB_?R__JARWIVUeG`gHXHBVQe_GM`MIC][RGGh@iSQrRCoO]GEM_[{OeCCkOjOI^WAcmHCsAc[EXMLL@DdAApJ`dIi_awPCeFcaaWyFCCgDdk_oqYBacS@gmaEBegBUA@UMY?P_^aAJAW_@j}aB{X?WdGOPN]aDyaOLA[?DfyPGvP@Aqp?_{zCSMrC@SUCCFVoaH^CGRBGGG|mA{[ZTSM_?]_?F}vFHTVa??qo?NvOF?Ifa~??Nz?FgCWAkM~_?FyWCnFEt~?WF~g?@}]vFH^sB?~qo?NrR~~?~oKB~~??~KW???@_R_???f}bW???@_KW??@X~Dk?b?Tps????R?tJ?F?Ina????J?MdHE@I@Bbai??e?w|B_BOBoPtO?D_DbwGGG_aQAI@T_Rtx??_cQ?i@gGj?dtx??GHc?bOPBBICy{_?OOaADGaHCeHtVCOC@BC@DOSEHgMYw`?COaCHC_SDhG{jaOPH_Oeb?}aqOGTOjQHH_HXS@mSwCCggVKGPDOdPQhdiCGcgTqIAa_fCKpFPsGCYDXIGaIAtWBTLcAAQgVPc`PSC[oYFSkACQ`]IbWvHOFa?T_?J?MT^?BVGu_G\\?iO?CoLawwCceA`s`ULD?OQWpsbAPH_QM_i[gcOHcQmAoPAaiIYAUkCWCHPbk?kgIIEXPEdKKO_hHV?akGaIFdCRKWKAA[K\\OIdOaJ`g`Kr`AGOwQmCIY?uiWJ@GUwOQGAUM`uOGM[Sh_EIyGAW@DbgtcG@YsIYOGiwPOA`QmgROcFPkeGOwM_IGSDIz@L_oD|GT`@It?`cAITrAYP?Bpqm?Ioj@H@?Tbglc_SLMYAGKNGCBM_eJRoUmkBdUOg@bg__lQDasyIipo]FWAb?rG?SpwKfC}Bjd`FfAD@RoCCkM@pY[wVROAlwBOSD[?DLcPcwVDVYTAY{HCKCwOPQq`cwNITtX?__aVWpiDLU@HPag_{VHGC@BMicpBmHgCWhPKEI|_?OObVX?{dKeGTDIQGtBx??GHeikYEJRICQKUHBIrBO@CGjhoiWdYQHGhS_eb[h??_cVSsLQWz?dCWh_VPiSOce?a]iuWLGOR?dO`rLtKCPH_PXwq]CkOGKPgAbrbrC@CPOX[lXHR_OY@IaCvhqaAgIIAbzIcYkO_BGs?j[ZsOTOaI_tlSpLaGOIPgCX}JcQGGST?xrIoqf?`_HS_hs{wgCmfhtC?ogS_KJCP?aJpbdHQzixjOOSDPCED_cOGR[FKso{\\efM_BEA_GhaAa@@rkApsl`varWOoDD?OXhCOHAtKbU`lZfZMgA_oa?W]GG_SFb`hpHrbfeVaB?DgAGhcG_PDqErIJVP[aAGbfcI{A@U_GQp[MdFuQINH?aDMwTUD?IUCGRlBR]LiA`sOWgIn_ioOeH_`Cv`hTIyQaFIAKGlkEjG@aTACEvAYqt[K_UaHC_nYAmGPAqACXrMMEfPcOUSOWAuwam_GhSACqZGsyYtH?B_oJiL]EBUADGSHIEbhXawMUWpKLDRVSOyQA`ICI_x\\gXwGZwEOTQiVZ?ee_gDO`IYIwwkogvOY?gygve?xocGLAEFCyXPNOU]?oP]I`nBG{OUGDASM`jKbr@RU?oadiazaAzGGcDAPTOmxD[OxM?[C@Y]Z`OT[?hXC@KFGwHR@LC_EABpJp{@C]CpKP?eOwCo}GDc?_s@@ulrO@\\QGUPGBKE_l_M`R?GBCOsk{k`@uOIsC_UAWdQd_eOI?EOPRFsw_bwGhSH?qGoRXKOf?a?ECCkxjWGSuBCiP?LAohQbaGq?OCiiAJP?QXzQGZCi_cWItOORLAQaLL@Dh?AplpcFQLP?MPIwGBIQScHJaPK_`FB]R@[HTACpBRS@L@`QP@rS@l??jVt?MpEi?JARe_GRQcgAERO[W__LnSOiqLQAF@paB?\\GaI@CpsMCGOJVx@LPIgcE`SeO`SbPC@^]DoSiuWGOOx?hP`wLDKKVIOAn|V]Iz@DjHIAAr?ISofLICO|cQ?^mp~QkoUqhEcCL?ad?]pEdCLVGA`vmF}D\\OUiWeCCh@ISAmfDALFIGPFjwVmTePRIoqP@c_ISgxCsgkFh@GFzoM~`[Gwq]D?O[GSgEjB`RCZQg@L~_M}d{QG@iCEV@HPIgqoP?G\\OKjL~xZjtRx?OiWGZQHGdSaiB?`Os_jRn~S\\m\\qo?eGWXl?bCiHqPCG@`wMKn^{Pv^EoWCBqARW`SQhGlO@CPsGMFz~UBnQtwP?sKC]SGcQkVCOCD_YHdh|~IBf{ir?_LQIJ_dCQh`t?GOXaCU[~}w?{[ZOCN_TNw??{t[[?TMJY?~b???qbUwxI?{WAl}?@orjw?Ik\\HONv???BVALDpTt[]pOebQG@]?JSckGIsqUc_SDCdlWmmQna_iJCOBaaQiTI?h[phH@PAHTkTV]C{s`akC_FEGdYE_ahiTdGDCEOr\\Biff`iAZp@?JgOY`]?[KZKPOgOXgMxc\\XptXGseO_Dk@LTCk@Tast?acC`CusmjgrJ`@{OS?w[CiIMP_ifpCBAGp\\Pg{{g?^LWK_iSiLlA@FHY?aVgqc?eHu?}ncCKFlK_e_hUrKO_RYEOPjkaGCcRaYhuwOSuRcaEPQjJWA`Ssh@PesWA`Cb`kZXwCKxSqWI`QmQwGAYscOLMMaGPKPqRVTj?OzUL?KpQiYwAAed`CQ{Xo__Pa[IYvecCP{kaCUSiR{GAKXQOXF\\@O_UP@[^_s_od`@n^qWEloSwOB?iBIqmGV?`@De^SKCbHGg^~S_YxgOw`?HoPXvOR_IGARX]QECfC_d^}S_yl_QoPAAqB`vOT`GD?IVzPAO`X_b|~D?t\\@kO_`K`KlJSHOeA?HTzocG`T_`v~cO\\LcLcA?SiAlL[DQCOOAUlpe@OMBBM~sSFUobc`?`p@pdkPaPGA?NH]ILHJsADzyPG`jLHpRDhaaGC@wE_SG\\[bz?qRTgSE~Wb@Ik[ZDKsXIAOGb@i@QHPs]w[Gp{GO^ngHCJu_|OaqwaGCBg_YDOK`qlxAYD\\AQFzsHCMlPqdDSfG_B?sDgW?t@XVhPIhRaQDzwR@JTguQabkc_GCXGpKCK_Ub{d_pUWKHvmAoQ]pJYCRWsOP?j@@ogPo@ZbFuhrOHRagUPbBK_a`@Nr@?XjeA_hD@GHmB|dW}?epIWeHQRGcOOVUoa?\\p{CDOT@@JipvFSw_qeIhSKWqg@OPLYq?eMZ`AEEOCCRjDmwjWGtWJCiQcLQA`AFf_aGVlS?hQOO_hZ`nRR[JAUoDJHQH`d@?JYwGcP~OOKEa_G@UtNjJJGoY[Al@bD`_h?`ZY_AheyOGeGc@@JSQM^BjCw[\\ArGtxGIwW?chnCdG?S@AcH@CkiTMsMi]AYidSbVgOmoCOEJ]DHGCG?PoOXA\\IDlfa`rJHWdUFPwGySOGQtUSc__CA[ACKHSxLMW\\KZI]AlHEnc@sa_OgizPCAOGCXC@D@Hov@zpPNEHZCrBi[GVKA_gkrcgC__GDgGGgQqaVq{O\\glcIUoyVOLP_OW[XsPO__OGt?OSPgvEij|~?ON~o@Fg|e?[Us?M???k?xr?D_??I[bdT^z{A?~~?G^[HwEMcgF???DGC]q@g??@TA]UKfrsmkzsVO`zPAaOSoOU?X@O_OHH?OKSTDikQjri^W{yjO`|BGdABa?d?_qc?_OSO_p_IBywoXzprp{fegO~HDCOVC?`cBECC@@P@@`C@eM`{JprbrkveTAR|?gp?M`?E_oWA_GB@GWP@KXjQR[k|efVVSgQvKCOpKOaGP?sPA?F?CCp_Oq`}_tstl\\K}ma`I}ODcOkCOaGcaGCAAQ?_pQ@ww~~{^?~~o?@xyGyW??U??M@E????K_Dh_DoyvFN~~b?~~o?ME{VD_?@g?@o?w????R?YU?YN?",
+      "automorphism_group_size": 1344
+    },
+    "verification": [
+      {
+        "checker": "checkers/check.c",
+        "result": "VALID",
+        "log": "verification/K5_K12_n224.c.txt",
+        "date": "2026-11-24"
+      }
+    ],
+    "prior_verification": "checked with jcheck.c and Sage (Cliquer) when found (2026-11-24)"
+  },
+  {
+    "id": "K5e_K10e_n96",
+    "cell": "R(K5-e, K10-e)",
+    "g_avoids": "J5",
+    "complement_avoids": "J10",
+    "lower_bound": 97,
+    "vertices": 96,
+    "edges": 1584,
+    "files": {
+      "graph6": {
+        "path": "graphs/K5e_K10e_n96.g6",
+        "sha256": "1097572812743e08534316cf14dbba01ef4c977ea0ab83225a50fabbabbb38a9"
+      },
+      "matrix": {
+        "path": "graphs/K5e_K10e_n96.txt",
+        "sha256": "4362b014a1334e85b57cb6a1da17a1e733def2310da402cac6b2493bbd5b288b"
+      }
+    },
+    "previous_lower_bound": 77,
+    "previous_source": "76-vertex disjoint union of Van Overberghe's 64-vertex (K5-e, K7-e)-graph and a 12-vertex (K5-e, K4-e)-graph (R(K4-e, K5-e) = 13); DS1.18 Table IIIa prints no lower bound for this cell",
+    "upper_bound": 188,
+    "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [BZ3]",
+    "found": "2026-11-21",
+    "method_short": "Cayley graph on SmallGroup(96,12)",
+    "method": "Cayley graph on the non-abelian group SmallGroup(96,12), from a staged SAT sweep over non-abelian groups.",
+    "page": "records/K5e_K10e_n96.md",
+    "structure": {
+      "description": "Cayley graph on GAP's SmallGroup(96,12), C3 : ((C4 x C4) : C2): vertex i is GAP's i-th element (0-based) and i ~ j exactly when j = i\u00b7s for s in a 33-element connection set."
+    },
+    "invariants": {
+      "min_degree": 33,
+      "max_degree": 33,
+      "canonical_graph6_nauty": "~?@_}q|sA@_SAOF_MpOwWd`RiKYWXcKK}PCBOc?gq?\\I_BQa_Iaa_JoiObWeCQTQChJkPBOyWEWXcKrB?~B?KKMQLHGpbCkKQYIDDG?GWgWO?EEEW?B@`wE??eD@`_@hP_gc?YQSCd?BdPGII?M`DIIG?JxHDHC?RwSIhO?JiAdSI?@tZWYO@_OlmQU?H?dNFw@_@_rr?W@}@bKK?@hEu?|GG?da]OUkBWF`}??ro?RrGu?GUoGZXa[?HR_Z{B{??^_?\\~}???No??W?]]@_ro??c@ll_Ol_?`_Hxx?dM?BPK?ZOshGHYOi?[gweCCxB?oKrF`_HMWKo?~@`eAR`KP?NDYOWCxshA@YLTAOdjQQbW?UbGmsOAaRg?fApVWG?cbY@DUAfYGBGhM_HY_Uz@?oSh[@PpSXk_BA`YoIEaheq?RWW?]]?ro?GK?BC_Rl`I[?GQ?aP_ExpAu?CO_WAuIGfSAvE?hT?VHGat_htOEDo?mQTDPcVT@`JW@kSTJApVEDCLoBhQ`PgiXqCRBg@jOhOwiKx@EPjU_HDPT_iAdWDoAwAGTJSAgWt@T?M_IIDFDOOppQKAY_IISLDO`bPWWBJ_ApCwUHBED`gFEoASPYKb@QbHWBR{??B{^_??~~w??SHApZW?AwMD`QGhGaQbtO?FOsXGpD?ghPP\\_?X`YJCgaGSUaal_?X`[ScSPSdOcSzO?FOt_SaiLGqPAuw?AwMgIPTB_B~{B{^_[?????~??N~oNo@}M?^_????",
+      "automorphism_group_size": 1152
+    },
+    "verification": [
+      {
+        "checker": "checkers/check.c",
+        "result": "VALID",
+        "log": "verification/K5e_K10e_n96.c.txt",
+        "date": "2026-11-24"
+      },
+      {
+        "checker": "checkers/check_networkx.py",
+        "result": "VALID",
+        "log": "verification/K5e_K10e_n96.networkx.txt",
+        "date": "2026-11-24"
+      }
+    ],
+    "also_proves": [
+      {
+        "cell": "R(K5-e, K10)",
+        "g_avoids": "J5",
+        "complement_avoids": "K10",
+        "lower_bound": 97,
+        "previous_lower_bound": 92,
+        "previous_source": "R(4,10) >= 92 (S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table I [HaKr1]), since K5-e contains K4; Table IIIa prints no lower bound for this cell",
+        "upper_bound": 233,
+        "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [BZ3]",
+        "reason": "K10 contains K10-e, so a complement with no K10-e has no K10.",
+        "verification": [
+          {
+            "checker": "checkers/check.c",
+            "result": "VALID",
+            "log": "verification/K5e_K10e_n96.K5e_K10.c.txt",
+            "date": "2026-11-24"
+          },
+          {
+            "checker": "checkers/check_networkx.py",
+            "result": "VALID",
+            "log": "verification/K5e_K10e_n96.K5e_K10.networkx.txt",
+            "date": "2026-11-24"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "K5e_K11e_n100",
+    "cell": "R(K5-e, K11-e)",
+    "g_avoids": "J5",
+    "complement_avoids": "J11",
+    "lower_bound": 101,
+    "vertices": 100,
+    "edges": 1674,
+    "files": {
+      "graph6": {
+        "path": "graphs/K5e_K11e_n100.g6",
+        "sha256": "4d015dae2e7919e17fe9ec91a6a77f3252cafc6def6862ef0225c2f91560bbb7"
+      },
+      "matrix": {
+        "path": "graphs/K5e_K11e_n100.txt",
+        "sha256": "cf2d6a0f9a095a0919c95f490a9fb97a3cb482c8996b7e692c535a5edcef5e83"
+      }
+    },
+    "previous_lower_bound": 92,
+    "previous_source": "R(4,10) >= 92 (S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table I [HaKr1]), since K5-e contains K4 and K11-e contains K10; Table IIIa prints no lower bound for this cell",
+    "upper_bound": 261,
+    "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [BZ3]",
+    "found": "2026-11-23",
+    "method_short": "SmallGroup(96,12) Cayley graph + 4 vertices by SAT",
+    "method": "The 96-vertex Cayley graph of K5e_K10e_n96 plus an isolated vertex (97 vertices, already a (K5-e, K11-e)-graph), then three exact SAT steps, each deleting up to 1 added vertex and adding 2. Vertices 0-95 and all their edges are unchanged.",
+    "page": "records/K5e_K11e_n100.md",
+    "extends": {
+      "base": "graphs/K5e_K10e_n96.g6",
+      "base_sha256": "1097572812743e08534316cf14dbba01ef4c977ea0ab83225a50fabbabbb38a9",
+      "base_source": "this repository, record K5e_K10e_n96",
+      "base_vertices": 96,
+      "base_edges_removed": [],
+      "base_edges_added": [],
+      "added_vertices": {
+        "96": [
+          3,
+          4,
+          5,
+          8,
+          10,
+          11,
+          18,
+          21,
+          22,
+          30,
+          33,
+          41,
+          45,
+          53,
+          55,
+          56,
+          60,
+          69,
+          70,
+          71,
+          72,
+          81,
+          82
+        ],
+        "97": [
+          7,
+          12,
+          13,
+          14,
+          48,
+          49,
+          50,
+          52,
+          53,
+          54,
+          63,
+          64,
+          66,
+          67,
+          68,
+          74,
+          76,
+          92,
+          94,
+          95,
+          96
+        ],
+        "98": [
+          0,
+          1,
+          11,
+          17,
+          18,
+          19,
+          27,
+          31,
+          41,
+          42,
+          44,
+          45,
+          46,
+          47,
+          57,
+          58,
+          61,
+          80,
+          81,
+          83,
+          88,
+          96,
+          97
+        ],
+        "99": [
+          1,
+          2,
+          4,
+          5,
+          6,
+          9,
+          16,
+          17,
+          28,
+          29,
+          32,
+          33,
+          43,
+          46,
+          47,
+          55,
+          59,
+          60,
+          87,
+          93,
+          96,
+          97,
+          98
+        ]
+      }
+    },
+    "invariants": {
+      "min_degree": 23,
+      "max_degree": 35,
+      "canonical_graph6_nauty": "~?@c~?????@?G@cAA?S?GGK?AK?HOo@Q_[??A?P?OMO?Io?@?h?D_d@goK?AoQo?OI\\AyGI?BAicO@FPRw|HAGO^_Y@PDT`GL?kPUOhbFPMc@DJYd_?D]oSsDaPTaZP?bw]M?BCgHfXs_WuqrKC?yiUjKCi@GSAOPEALC_@XQ_[gO?DMYXG?T@YBGPgc?StFO[gO?_p|QKAE@OROGIKPGNFcaGwaA?GgOQA_?x?ec`GEL?GZOHIGSCGv_TGqLE@aA[A@pCPKAaAgRo_AWhoGZPqHMAQP?GMoZg?j@bMc`KAI@J`HDsTM{OIS_hsWOGaHIE_a\\wS_e@?Cp}@Gbol@QyGIANAO@fDE?UwB[g?O\\`EaCH\\_`S{HIEDTGjF_AOq?eCSJWLDbMiOIS`O\\?q}[_oAA@qfFO_AAsHoqPho?oHow@vavoAcC_GcC^SIJCK]@_KUHGlOMITcpECXYD@C\\wI@pG_MQGhSGUuGesaW_TWUAMi[D`OAi?cWLSRIhiPx?IcIB@@\\boEIDGoOYop_g`noRGCgRKLFAJU@jaPGmI?@wgCKncROOyaGOAYSOHJvIk@Ha_@?@mJxoobgOCOX`A@QV_?\\CK`Cd?cipvFK@MO`B`VLh_hPP_gBsq_Ei}@gIgKcP_}IOhO|YDSKPaQFp?tCaEUdia_SC_`prDAATwEQ?IVpg@nHWc?x\\g_c`_GrWUUA?jphCJ?gaAdrCBRq@PXAWBohO[w\\jSd__h@AUI?_HE]RbFcLeCZW?T??GgIh?c_df\\YOU@CTGj?wCL?[row{_KAWAs@kn`l?KIiIoAOoPdSRe[OqO[pDEC[?aO",
+      "automorphism_group_size": 1
+    },
+    "verification": [
+      {
+        "checker": "checkers/check.c",
+        "result": "VALID",
+        "log": "verification/K5e_K11e_n100.c.txt",
+        "date": "2026-11-24"
+      }
+    ],
+    "prior_verification": "checked with jcheck.c and NetworkX when found (2026-11-23)"
+  },
+  {
+    "id": "K5e_K11e_n96",
+    "cell": "R(K5-e, K11-e)",
+    "g_avoids": "J5",
+    "complement_avoids": "J11",
+    "lower_bound": 97,
+    "vertices": 96,
+    "edges": 1584,
+    "files": {
+      "graph6": {
+        "path": "graphs/K5e_K11e_n96.g6",
+        "sha256": "e8ff0c41777ab8b66aa144de9abc7ddbc79822ef723d6da6454487d84fc3dc96"
+      },
+      "matrix": {
+        "path": "graphs/K5e_K11e_n96.txt",
+        "sha256": "f535cf2ea5b9d624e4f5c001e19745cfe9baa60dd6fa6f9115d5aa9ba6218f2b"
+      }
+    },
+    "previous_lower_bound": 92,
+    "previous_source": "R(4,10) >= 92 (S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table I [HaKr1]), since K5-e contains K4 and K11-e contains K10; Table IIIa prints no lower bound for this cell",
+    "upper_bound": 261,
+    "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [BZ3]",
+    "found": "2026-11-20",
+    "method_short": "Cayley graph on Z4 \u00d7 Z4 \u00d7 Z2 \u00d7 Z3",
+    "method": "Cayley graph on Z4 x Z4 x Z2 x Z3 from a sweep over abelian groups of order 96 (SAT with lazily added clique constraints, connection sets pruned by group automorphisms). Two other non-isomorphic 96-vertex witnesses came from Z16 x Z2 x Z3 and Z8 x Z4 x Z3.",
+    "page": "records/K5e_K11e_n96.md",
+    "structure": {
+      "type": "abelian_cayley",
+      "group": [
+        4,
+        4,
+        2,
+        3
+      ],
+      "connection_set": [
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          1
+        ],
+        [
+          0,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          0,
+          1
+        ],
+        [
+          1,
+          3,
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          1,
+          0
+        ],
+        [
+          2,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          0,
+          1
+        ],
+        [
+          3,
+          1,
+          0,
+          2
+        ],
+        [
+          3,
+          1,
+          1,
+          2
+        ],
+        [
+          3,
+          2,
+          0,
+          1
+        ],
+        [
+          3,
+          2,
+          0,
+          2
+        ],
+        [
+          3,
+          3,
+          1,
+          2
+        ]
+      ]
+    },
+    "invariants": {
+      "min_degree": 33,
+      "max_degree": 33,
+      "canonical_graph6_nauty": "~?@_uiCCEC_C?O@_?_?wDKSSd@i`DUGSC`IEaE?aQOKr??[o?@_CN~olUePUsqcitJIhUUYIWxMcCqjdGFGlaoJaYLWA~~o?_A_EE?ID?WE?S?oor??@GoN??HS??EpHi??ARRQg??QXkt???uEzBDLO?@G{Aqg??tLGec?IWKhHh?@UHdGqo?THhhBJ??kf@KA`xBde@KGQeRiX_Y?b[Dij?E_`KsZTHSCG`d`yU?gOOYHjiWA__QUBMlGPO_HLKUjGG]@eg?Nf@hWWeT?Buodg`iEBKaDaDGbOWBMGHpBAUOKFc_kHGGd_KW[_RCSbM?@er_MKqBK_?YRwC[r@OMY?RNORQC?SUg?r\\AqA_HAigAU{AXA_?Ssg@h{D_h?C?RYbM?@??dD?CxSkW?_?Eag?]mAd?WF}EW?@|EDgE?^x_X]rIo??RDoK{K^JDK??kIKNKKD|_WI@EY`OF}AnW@`OG^OI@~_I?~BI@Ky}_o?DOB{LOGNVtK??_HFUAiA^P}F_C?EEh`TDem]X_A??[qRbN?W?EH?N?FBWfJoH?AP_BzGK\\KIbGAKTQtHKPUSoUS_CpSqjAEPRU_ke?EPUXUHEI[U`SU?aPTihEChKqtAs_I`KlGA?iSsu_qoAoQsk?_OhXXsEX?g`hX_GCIeXigUWA`EYX?_b~?m@Y?W??EXw@kr~@Pad@_??WFw@rKnk{KDGKgI{?oc?WTzNB?hKD@[oKE?HBxWEXTC]h_EFaA??NX_FigM\\W@`eOO??",
+      "automorphism_group_size": 384
+    },
+    "verification": [
+      {
+        "checker": "checkers/check.c",
+        "result": "VALID",
+        "log": "verification/K5e_K11e_n96.c.txt",
+        "date": "2026-11-24"
+      },
+      {
+        "checker": "checkers/check_networkx.py",
+        "result": "VALID",
+        "log": "verification/K5e_K11e_n96.networkx.txt",
+        "date": "2026-11-24"
+      }
+    ],
+    "superseded_by": "K5e_K11e_n100"
+  },
+  {
+    "id": "K5e_K8_n72",
+    "cell": "R(K5-e, K8)",
+    "g_avoids": "J5",
+    "complement_avoids": "K8",
+    "lower_bound": 73,
+    "vertices": 72,
+    "edges": 1012,
+    "files": {
+      "graph6": {
+        "path": "graphs/K5e_K8_n72.g6",
+        "sha256": "770f64eef5ed23520d6469c0bee1e70c2ec714d51be873de4f326b8b1d662f8d"
+      },
+      "matrix": {
+        "path": "graphs/K5e_K8_n72.txt",
+        "sha256": "35054dde22a7160dac91c81c2792c697fa90b57e031b15e2ba1bca46d2e393ec"
+      }
+    },
+    "previous_lower_bound": 69,
+    "previous_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, lower bound [Ea1]",
+    "upper_bound": 117,
+    "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [BZ3]",
+    "found": "2026-11-20",
+    "method_short": "SAT ladder from the 71-vertex record",
+    "method": "One exact SAT step from the 71-vertex record K5e_K8_n71 (VO64 \u2294 K4, climbed by SAT): delete up to 3 of the added vertices and add 4. Vertices 0-63 and all their edges are unchanged.",
+    "page": "records/K5e_K8_n72.md",
+    "extends": {
+      "base": "bases/VO_J5J7n64.g6",
+      "base_sha256": "3e9b8b3ca9c473a81fd46fa1ead09b2cc2ba8f1f96eb0f325996c4cd64c05c8e",
+      "base_source": "https://github.com/Steven-VO/circulant-Ramsey/blob/master/RamseyGraphs/Jn/J5J7n64.g6",
+      "base_vertices": 64,
+      "base_edges_removed": [],
+      "base_edges_added": [],
+      "added_vertices": {
+        "64": [
+          0,
+          1,
+          3,
+          5,
+          8,
+          10,
+          12,
+          22,
+          24,
+          26,
+          28,
+          37,
+          50,
+          51,
+          52,
+          53
+        ],
+        "65": [
+          2,
+          4,
+          6,
+          7,
+          9,
+          11,
+          21,
+          23,
+          25,
+          27,
+          46,
+          47,
+          48,
+          49,
+          54,
+          63
+        ],
+        "66": [
+          9,
+          18,
+          21,
+          22,
+          25,
+          27,
+          28,
+          31,
+          33,
+          35,
+          39,
+          43,
+          45,
+          47,
+          51,
+          56,
+          64,
+          65
+        ],
+        "67": [
+          13,
+          17,
+          19,
+          23,
+          29,
+          32,
+          41,
+          46,
+          48,
+          49,
+          50,
+          52,
+          53,
+          57,
+          61,
+          63,
+          64,
+          65,
+          66
+        ],
+        "68": [
+          0,
+          1,
+          3,
+          5,
+          7,
+          11,
+          14,
+          16,
+          20,
+          24,
+          36,
+          42,
+          54,
+          58,
+          60,
+          62,
+          64,
+          65
+        ],
+        "69": [
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          15,
+          26,
+          30,
+          34,
+          37,
+          38,
+          40,
+          44,
+          55,
+          59,
+          64,
+          65,
+          68
+        ],
+        "70": [
+          13,
+          15,
+          17,
+          19,
+          29,
+          30,
+          32,
+          39,
+          42,
+          43,
+          44,
+          45,
+          56,
+          58,
+          60,
+          62,
+          65,
+          66,
+          67,
+          68,
+          69
+        ],
+        "71": [
+          14,
+          16,
+          18,
+          20,
+          31,
+          33,
+          34,
+          35,
+          36,
+          38,
+          40,
+          41,
+          55,
+          57,
+          59,
+          61,
+          64,
+          66,
+          67,
+          68,
+          69
+        ]
+      }
+    },
+    "invariants": {
+      "min_degree": 21,
+      "max_degree": 29,
+      "canonical_graph6_nauty": "~?@G~rHx}CcCPPA`E`HS?[_XaKI_eD?qC_WQGoO`?H{G?{P?WLW??FPNG?h?FKA_FK@PBqHdOX[Ia`KsTAPeaK`OoMd`WBDpYB@IJQcHBO\\I_PD[j@UPIlJ?tHDLX`dIOlYWTK@OH{^~{D?]Lxo@AEBZkWGakTDsr?HiRAriOCYRGnDcGQiiDjJA?jS_{fS[GO}Cb~A@CRKIuJLI`MDHYJwiObJCNDicsGX`EypjF?PKHV]bIg`B_`mm`ua@AqCvYQz?_ETJOBTevI@ibS@UdqspDQd_TKm\\W`Qqe@dKuUk@kLueCKjKbCeX\\gaTFWY@PdvQKWYie?dLFlGLJBogGh^DT@TX@yCQNpX`_rOjK`DfPrOeDQZc@CtsicTGo{i?EB^~?{@y??NCnE^MR?@eOiOT}Kxl_?FKAkcV~{Xw@o??]C",
+      "automorphism_group_size": 1
+    },
+    "verification": [
+      {
+        "checker": "checkers/check.c",
+        "result": "VALID",
+        "log": "verification/K5e_K8_n72.c.txt",
+        "date": "2026-11-24"
+      },
+      {
+        "checker": "checkers/check_networkx.py",
+        "result": "VALID",
+        "log": "verification/K5e_K8_n72.networkx.txt",
+        "date": "2026-11-24"
+      }
+    ]
+  },
+  {
     "id": "K5e_K8_n71",
     "cell": "R(K5-e, K8)",
     "g_avoids": "J5",
@@ -22,6 +1640,7 @@
     "upper_bound": 117,
     "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [BZ3]",
     "found": "2026-11-20",
+    "method_short": "VO64 \u2294 K4, then a SAT ladder",
     "method": "Disjoint union of Van Overberghe's 64-vertex (K5-e, K7-e)-graph and K4 (a 68-vertex (K5-e, K8)-graph), then three exact SAT steps (CaDiCaL through PySAT, lazy constraints, lexicographic symmetry breaking), each deleting up to 2 of the added vertices and adding 3. Vertices 0-63 and all their edges are unchanged. Supersedes the 70-vertex witness here.",
     "extends": {
       "base": "bases/VO_J5J7n64.g6",
@@ -203,7 +1822,9 @@
         "log": "verification/K5e_K8_n71.sage.txt",
         "date": "2026-11-19"
       }
-    ]
+    ],
+    "page": "records/K5e_K8_n71.md",
+    "superseded_by": "K5e_K8_n72"
   },
   {
     "id": "K5e_K8_n70",
@@ -228,6 +1849,7 @@
     "upper_bound": 117,
     "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [BZ3]",
     "found": "2026-11-19",
+    "method_short": "VO64 + 6 vertices by SAT",
     "method": "Exact SAT search (CaDiCaL through PySAT, cube-and-conquer with lexicographic symmetry breaking) for new vertices added to Van Overberghe's 64-vertex (K5-e, K7-e)-graph; vertices 0-63 and all their edges are unchanged. 6 vertices added.",
     "extends": {
       "base": "bases/VO_J5J7n64.g6",
@@ -384,7 +2006,179 @@
         "date": "2026-11-19"
       }
     ],
-    "superseded_by": "K5e_K8_n71"
+    "superseded_by": "K5e_K8_n71",
+    "page": "records/K5e_K8_n70.md"
+  },
+  {
+    "id": "K5e_K8e_n67",
+    "cell": "R(K5-e, K8-e)",
+    "g_avoids": "J5",
+    "complement_avoids": "J8",
+    "lower_bound": 68,
+    "vertices": 67,
+    "edges": 911,
+    "files": {
+      "graph6": {
+        "path": "graphs/K5e_K8e_n67.g6",
+        "sha256": "cc5f5d321a06225e6852aaf5ef6d213ba8ce0eeb6da0f5a4bcf734b21c8f97e7"
+      },
+      "matrix": {
+        "path": "graphs/K5e_K8e_n67.txt",
+        "sha256": "8309812733e8c5b34658d8a6f1b654f7a09d168e67909f24baa9422e280c9fcb"
+      }
+    },
+    "previous_lower_bound": 66,
+    "previous_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, lower bound [Ea1]",
+    "upper_bound": 91,
+    "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [BZ3]",
+    "found": "2026-11-20",
+    "method_short": "SAT ladder from the 66-vertex record",
+    "method": "One exact SAT step from the 66-vertex record K5e_K8e_n66 (Van Overberghe's 64-vertex (K5-e, K7-e)-graph plus 2 vertices): delete up to 3 vertices of any kind and add 4. The step deleted base vertices 0 and 44 and one added vertex.",
+    "page": "records/K5e_K8e_n67.md",
+    "extends": {
+      "base": "bases/VO_J5J7n64.g6",
+      "base_sha256": "3e9b8b3ca9c473a81fd46fa1ead09b2cc2ba8f1f96eb0f325996c4cd64c05c8e",
+      "base_source": "https://github.com/Steven-VO/circulant-Ramsey/blob/master/RamseyGraphs/Jn/J5J7n64.g6",
+      "base_vertices": 64,
+      "base_vertices_deleted": [
+        0,
+        44
+      ],
+      "base_edges_removed": [],
+      "base_edges_added": [],
+      "added_vertices": {
+        "62": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          12,
+          19,
+          20,
+          21,
+          22,
+          23,
+          32,
+          33,
+          34,
+          35
+        ],
+        "63": [
+          0,
+          2,
+          4,
+          7,
+          9,
+          11,
+          12,
+          13,
+          15,
+          25,
+          30,
+          38,
+          48,
+          50,
+          51,
+          54,
+          56,
+          58,
+          59,
+          61,
+          62
+        ],
+        "64": [
+          7,
+          9,
+          11,
+          13,
+          15,
+          17,
+          20,
+          21,
+          23,
+          25,
+          30,
+          33,
+          45,
+          48,
+          50,
+          51,
+          54,
+          56,
+          58,
+          59,
+          61,
+          62
+        ],
+        "65": [
+          36,
+          37,
+          38,
+          39,
+          40,
+          44,
+          45,
+          46,
+          47,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64
+        ],
+        "66": [
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          59,
+          60,
+          62,
+          63,
+          64
+        ]
+      }
+    },
+    "invariants": {
+      "min_degree": 19,
+      "max_degree": 29,
+      "canonical_graph6_nauty": "~?@BnyCC?gGCNCFG{HkCm?XK?fK@\\OG{?Ceo@Qs@CW_E[c_pgc@RIO?o[e?oSc_IEQCgEB{AcEQUtCHQZDAIHU`VK@pwS_LrFQaAtT[I_PaxWQFC[\\wQsfDp@HqHTSHAY`MWc_P}~_[F`CtrfBxADmPwjWaBlItLh@EhTYhJPPYMNEcwaFSFMWLgGC`oN{N?kAw^bva@ggMKzSCjSKIijpCJdHCFPuIHgf`mhU\\GWI\\FVBikQPCuJWpxqGO`wswpeLgRCyWfBdRaOsMUQhTasWU@}gb{@BoN_BF?@~F`wMNELwB}?{Nb`FI^YPHKrckBTWuQUKiwi?rTUhBQlLR?EhHkcbeiMiGXdJS`UhXUWT~_??^~~w???",
+      "automorphism_group_size": 2
+    },
+    "verification": [
+      {
+        "checker": "checkers/check.c",
+        "result": "VALID",
+        "log": "verification/K5e_K8e_n67.c.txt",
+        "date": "2026-11-24"
+      },
+      {
+        "checker": "checkers/check_networkx.py",
+        "result": "VALID",
+        "log": "verification/K5e_K8e_n67.networkx.txt",
+        "date": "2026-11-24"
+      }
+    ]
   },
   {
     "id": "K5e_K8e_n66",
@@ -409,6 +2203,7 @@
     "upper_bound": 91,
     "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [BZ3]",
     "found": "2026-11-19",
+    "method_short": "VO64 + 2 vertices by SAT",
     "method": "Exact SAT search (CaDiCaL through PySAT, cube-and-conquer with lexicographic symmetry breaking) for new vertices added to Van Overberghe's 64-vertex (K5-e, K7-e)-graph; vertices 0-63 and all their edges are unchanged. 2 adjacent vertices added.",
     "extends": {
       "base": "bases/VO_J5J7n64.g6",
@@ -484,6 +2279,238 @@
         "log": "verification/K5e_K8e_n66.sage.txt",
         "date": "2026-11-19"
       }
+    ],
+    "page": "records/K5e_K8e_n66.md",
+    "superseded_by": "K5e_K8e_n67"
+  },
+  {
+    "id": "K5e_K9_n80",
+    "cell": "R(K5-e, K9)",
+    "g_avoids": "J5",
+    "complement_avoids": "K9",
+    "lower_bound": 81,
+    "vertices": 80,
+    "edges": 1160,
+    "files": {
+      "graph6": {
+        "path": "graphs/K5e_K9_n80.g6",
+        "sha256": "735b7848a6a115841dd009e6f44176222e6df6d844b3ff5a2687e78c85cc149b"
+      },
+      "matrix": {
+        "path": "graphs/K5e_K9_n80.txt",
+        "sha256": "535bf76c031ec395195fd9148bd5ccef1c50bbb4c3631435cd6be4d3ac6f21a6"
+      }
+    },
+    "previous_lower_bound": 75,
+    "previous_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, lower bound [Ea1]",
+    "upper_bound": 169,
+    "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [BZ3]",
+    "found": "2026-11-20",
+    "method_short": "Cayley graph on Z4 \u00d7 Z4 \u00d7 Z5",
+    "method": "Cayley graph on Z4 x Z4 x Z5 whose inverse-closed connection set was found by SAT with lazily added clique constraints (CaDiCaL), in about a second.",
+    "page": "records/K5e_K9_n80.md",
+    "structure": {
+      "type": "abelian_cayley",
+      "group": [
+        4,
+        4,
+        5
+      ],
+      "connection_set": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          2,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          0,
+          3,
+          3
+        ],
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          3
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          4
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          2,
+          0,
+          1
+        ],
+        [
+          2,
+          0,
+          2
+        ],
+        [
+          2,
+          0,
+          3
+        ],
+        [
+          2,
+          0,
+          4
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          4
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          3,
+          0,
+          2
+        ],
+        [
+          3,
+          0,
+          3
+        ],
+        [
+          3,
+          1,
+          0
+        ],
+        [
+          3,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          4
+        ],
+        [
+          3,
+          3,
+          0
+        ]
+      ]
+    },
+    "invariants": {
+      "min_degree": 29,
+      "max_degree": 29,
+      "canonical_graph6_nauty": "~?@OsqCLAO_C?OA_A{EPM[RYi`qTFCXMEIcrDKggkdLDXIYQQTsbGs{@k?TR?{KioSqbMB@r~}???uA?@rHA?@tc_`SBXGCI_ou?[A@kc@oGFEoGT?zEoCI_vAEiPaLG`VCcasGTTKGdc`JdGadaOiuGCkiOVTCDJO`ShHPhXGQeKSUh_`hGeSlIaDQ`hSjS@dAQeddT@aaLEhYi?q_ucLIioKSMTAtTQQDGGyYTdTGIPDhYhi`nB_AAME?Y|?GodoX_@n?AEHFoK?]WAWGm??{@DqGpWX`e@iRGOu`_@xqAX~_@o?NBZPUQWFBB?NomAYIgaIl@KR_Z@UHDSgJCGhaeToBBKLPQEKFN?r?qX?Rp_BwX}?B@yIKNBM?FeEWCTQdKSPWX_wWDRDKdGhHcMI?XdEcWbCJKgg`daT`cQHRQccIciLHCPgdoSTIbEQhGaSYoWY?BxoN????]EFw?|b{????F}]@Zo\\ESmKB?H@BL]`x``FKo@GGorr?K{qM?F_aAF`n?VLToE?[Dc@_",
+      "automorphism_group_size": 2560
+    },
+    "verification": [
+      {
+        "checker": "checkers/check.c",
+        "result": "VALID",
+        "log": "verification/K5e_K9_n80.c.txt",
+        "date": "2026-11-24"
+      },
+      {
+        "checker": "checkers/check_networkx.py",
+        "result": "VALID",
+        "log": "verification/K5e_K9_n80.networkx.txt",
+        "date": "2026-11-24"
+      }
+    ],
+    "also_proves": [
+      {
+        "cell": "R(K5-e, K10-e)",
+        "g_avoids": "J5",
+        "complement_avoids": "J10",
+        "lower_bound": 81,
+        "previous_lower_bound": 77,
+        "previous_source": "76-vertex disjoint union of Van Overberghe's 64-vertex (K5-e, K7-e)-graph and a 12-vertex (K5-e, K4-e)-graph (R(K4-e, K5-e) = 13); DS1.18 Table IIIa prints no lower bound for this cell",
+        "upper_bound": 188,
+        "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [BZ3]",
+        "reason": "K10-e contains K9, so a complement with no K9 has no K10-e.",
+        "verification": [
+          {
+            "checker": "checkers/check.c",
+            "result": "VALID",
+            "log": "verification/K5e_K9_n80.K5e_K10e.c.txt",
+            "date": "2026-11-24"
+          },
+          {
+            "checker": "checkers/check_networkx.py",
+            "result": "VALID",
+            "log": "verification/K5e_K9_n80.K5e_K10e.networkx.txt",
+            "date": "2026-11-24"
+          }
+        ],
+        "superseded_by": "K5e_K10e_n96"
+      }
     ]
   },
   {
@@ -509,6 +2536,7 @@
     "upper_bound": 169,
     "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [BZ3]",
     "found": "2026-11-20",
+    "method_short": "VO64 \u2294 10-vertex graph, then a SAT ladder",
     "method": "Disjoint union of Van Overberghe's 64-vertex (K5-e, K7-e)-graph and a 10-vertex graph with no K5-e whose complement is triangle-free (a 74-vertex (K5-e, K9)-graph), then five exact SAT steps (CaDiCaL through PySAT, lazy constraints, lexicographic symmetry breaking), each deleting up to 2 of the added vertices and adding 3. Vertices 0-63 and all their edges are unchanged. The complement also has no K10-e, so the graph gives R(K5-e, K10-e) >= 80 as well (that cell has no lower bound printed in DS1.18).",
     "extends": {
       "base": "bases/VO_J5J7n64.g6",
@@ -833,7 +2861,37 @@
         "log": "verification/K5e_K9_n79.sage.txt",
         "date": "2026-11-19"
       }
-    ]
+    ],
+    "page": "records/K5e_K9_n79.md",
+    "also_proves": [
+      {
+        "cell": "R(K5-e, K10-e)",
+        "g_avoids": "J5",
+        "complement_avoids": "J10",
+        "lower_bound": 80,
+        "previous_lower_bound": 77,
+        "previous_source": "76-vertex disjoint union of Van Overberghe's 64-vertex (K5-e, K7-e)-graph and a 12-vertex (K5-e, K4-e)-graph (R(K4-e, K5-e) = 13); DS1.18 Table IIIa prints no lower bound for this cell",
+        "upper_bound": 188,
+        "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [BZ3]",
+        "reason": "K10-e contains K9, so a complement with no K9 has no K10-e.",
+        "verification": [
+          {
+            "checker": "checkers/check.c",
+            "result": "VALID",
+            "log": "verification/K5e_K9_n79.K5e_K10e.c.txt",
+            "date": "2026-11-24"
+          },
+          {
+            "checker": "checkers/check_networkx.py",
+            "result": "VALID",
+            "log": "verification/K5e_K9_n79.K5e_K10e.networkx.txt",
+            "date": "2026-11-24"
+          }
+        ],
+        "superseded_by": "K5e_K9_n80"
+      }
+    ],
+    "superseded_by": "K5e_K9_n80"
   },
   {
     "id": "K5e_K9e_n76",
@@ -853,11 +2911,12 @@
         "sha256": "c3ea6750268aca618755c30a2f73de37c646a5cc78ad1bc0b3a9edb92836bb20"
       }
     },
-    "previous_lower_bound": 69,
-    "previous_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, lower bound [Ea1]",
+    "previous_lower_bound": 71,
+    "previous_source": "70-vertex disjoint union of Van Overberghe's 64-vertex (K5-e, K7-e)-graph and the octahedron: neither part contains K5-e, and the complement of the union is the join of the parts' complements, which has no K9-e. DS1.18 Table IIIa prints 69 [Ea1]",
     "upper_bound": 136,
     "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [Ea1]",
     "found": "2026-11-19",
+    "method_short": "VO64 \u2294 octahedron, then a SAT ladder",
     "method": "Disjoint union of Van Overberghe's 64-vertex (K5-e, K7-e)-graph and an octahedron (a 70-vertex (K5-e, K9-e)-graph), then repeated exact SAT steps (CaDiCaL through PySAT, lazy constraints, lexicographic symmetry breaking) that delete up to d of the added vertices and add d+1 new ones: five steps with d <= 1 and one with d <= 2. Vertices 0-63 and all their edges are unchanged. Supersedes the 71-vertex witness here.",
     "extends": {
       "base": "bases/VO_J5J7n64.g6",
@@ -1158,7 +3217,8 @@
     ],
     "verification_skipped": [
       "checkers/check_sage.py"
-    ]
+    ],
+    "page": "records/K5e_K9e_n76.md"
   },
   {
     "id": "K5e_K9e_n71",
@@ -1178,11 +3238,12 @@
         "sha256": "574f8223d34fd3af4b300bcd1ed37117a2eb018b63fb98302a380df6ac8eb903"
       }
     },
-    "previous_lower_bound": 69,
-    "previous_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, lower bound [Ea1]",
+    "previous_lower_bound": 71,
+    "previous_source": "70-vertex disjoint union of Van Overberghe's 64-vertex (K5-e, K7-e)-graph and the octahedron: neither part contains K5-e, and the complement of the union is the join of the parts' complements, which has no K9-e. DS1.18 Table IIIa prints 69 [Ea1]",
     "upper_bound": 136,
     "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [Ea1]",
     "found": "2026-11-19",
+    "method_short": "VO64 + 7 vertices by SAT",
     "method": "Exact SAT search (CaDiCaL through PySAT, cube-and-conquer with lexicographic symmetry breaking) for new vertices added to Van Overberghe's 64-vertex (K5-e, K7-e)-graph; vertices 0-63 and all their edges are unchanged. 7 vertices added.",
     "extends": {
       "base": "bases/VO_J5J7n64.g6",
@@ -1328,7 +3389,866 @@
         "date": "2026-11-19"
       }
     ],
-    "superseded_by": "K5e_K9e_n76"
+    "superseded_by": "K5e_K9e_n76",
+    "page": "records/K5e_K9e_n71.md"
+  },
+  {
+    "id": "K6_K8e_n116",
+    "cell": "R(K6, K8-e)",
+    "g_avoids": "K6",
+    "complement_avoids": "J8",
+    "lower_bound": 117,
+    "vertices": 116,
+    "edges": 3248,
+    "files": {
+      "graph6": {
+        "path": "graphs/K6_K8e_n116.g6",
+        "sha256": "7394347e5fcd7a15b723daa1977e2ef7808d4089e60516440b1cfd14da90f2da"
+      },
+      "matrix": {
+        "path": "graphs/K6_K8e_n116.txt",
+        "sha256": "63a60a3067eface9f97da88c7a022ef0f3930498e771d38d2e60b815a2ad6f83"
+      }
+    },
+    "previous_lower_bound": 115,
+    "previous_source": "R(6,7) >= 115 (S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table I [ExT]), since K8-e contains K7; Table IIIa prints no lower bound for this cell",
+    "upper_bound": 353,
+    "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [BZ4]",
+    "found": "2026-11-21",
+    "method_short": "Circulant on Z116",
+    "method": "Circulant graph on Z116 (= Z4 x Z29) found by SAT with lazily added clique constraints (CaDiCaL 1.5.3, 99 s). The same graph, up to isomorphism, came from Z2 x Z2 x Z29.",
+    "page": "records/K6_K8e_n116.md",
+    "structure": {
+      "type": "abelian_cayley",
+      "group": [
+        116
+      ],
+      "connection_set": [
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          10
+        ],
+        [
+          11
+        ],
+        [
+          14
+        ],
+        [
+          15
+        ],
+        [
+          16
+        ],
+        [
+          17
+        ],
+        [
+          18
+        ],
+        [
+          19
+        ],
+        [
+          20
+        ],
+        [
+          21
+        ],
+        [
+          24
+        ],
+        [
+          26
+        ],
+        [
+          27
+        ],
+        [
+          28
+        ],
+        [
+          31
+        ],
+        [
+          36
+        ],
+        [
+          37
+        ],
+        [
+          39
+        ],
+        [
+          41
+        ],
+        [
+          43
+        ],
+        [
+          46
+        ],
+        [
+          47
+        ],
+        [
+          50
+        ],
+        [
+          52
+        ],
+        [
+          55
+        ],
+        [
+          61
+        ],
+        [
+          64
+        ],
+        [
+          66
+        ],
+        [
+          69
+        ],
+        [
+          70
+        ],
+        [
+          73
+        ],
+        [
+          75
+        ],
+        [
+          77
+        ],
+        [
+          79
+        ],
+        [
+          80
+        ],
+        [
+          85
+        ],
+        [
+          88
+        ],
+        [
+          89
+        ],
+        [
+          90
+        ],
+        [
+          92
+        ],
+        [
+          95
+        ],
+        [
+          96
+        ],
+        [
+          97
+        ],
+        [
+          98
+        ],
+        [
+          99
+        ],
+        [
+          100
+        ],
+        [
+          101
+        ],
+        [
+          102
+        ],
+        [
+          105
+        ],
+        [
+          106
+        ],
+        [
+          112
+        ],
+        [
+          113
+        ],
+        [
+          114
+        ]
+      ]
+    },
+    "invariants": {
+      "min_degree": 56,
+      "max_degree": 56,
+      "canonical_graph6_nauty": "~?@s}zVMreuVJZQxeuX^xe@~rKzoBu]?eF`RoKIiYOCkk?SrUieX\\QieTjQkquTLRYTeTjTQeTJrSrSVXTIskUYYdUSqiTaZKklQReYTJOUUddhOjQskBG}@}UEBfN?{WE]{?|boHmW]U?{TwXfcEEu{KK}WFMr{MJBow}@}g{KBnfwAuWWl{{ogWXxjK{MB{rCu]EKw~Ko^w?Rjv_FK{NorCE^TKrNaT_N{o]FuJI~BY?XxfsLxxW?NK~Qlffg?K~SnaN{Dfe?|qgOoxN``wZEI@xSorKpkqmECZN?pZLP[BFE@}CmgjRoEUW]HRlCh_]FoBwmKih~}???B{@~??{DhfeIMDukoKt@e]RENNO]@YBNLHJFfh_EVNrADFwZ_KrU?]XLJHs{?NqXwWUTSnCp}WDKo@k}HErlLN|YY^o?B~~Tdn|JJ^_?F~}N~oF~~_??F~}H~fO{oGPixlgJfeV?K{jO\\mAq^NCw@xwDi]WYP~Bd_XwWJp}ApI@}XBo|MeeFSrIE]iKrK\\iXLLQp{?EF`~xfEWKxrXYhsjTPJYQeqcisjMYdUHZQSuWdLRNEiTdJeGifQLTXmIjSiVKPTNC[XhbikrAiucTxArJJHuhePTZQI{PYRJIliYSjcJPmdgUUediklD[`YLtLDHieLQsrpaqexahiqiqYYUZbDdLrHRiRIseYhhcx[hsg\\ThYdRQjIq[mSyQMtIYhOYrJRsNMv@H{iqisBhee]`xuwDNYhFe^r{?EIFfZ_JBK??r{mXwBwkhmWTf_XKrJM]ERFJdMc[O^`@`dJrrL]OlEyH^{Kp``a{~BhUsanBhKrsB?uM^`mjYQeqZPfeSBoF]@~V[pDSxmX}D@SlreYcNMKoXwWiX]WjRrXdWNMKoXsWTemWieilItotKeeieRQuTDUYklQ{LRHhjHbJRd`QleTUYqeeFSsqYiiqatMYieZIYW\\RbITTjSITUdLTXa{^_lKYsjWXDieaqixa{^_kk\\JTWeDTTadXRqtNKLeTTeYJOijWUhg{lRrBTdieUdIHX\\DIkyyBloVJdSsJeSYYsJTLjgMv@YmIkgle`KiJXidwYmZYCyhTlAtOrSJeTXwYmZYGyUi\\DIg",
+      "automorphism_group_size": 9744
+    },
+    "verification": [
+      {
+        "checker": "checkers/check.c",
+        "result": "VALID",
+        "log": "verification/K6_K8e_n116.c.txt",
+        "date": "2026-11-24"
+      },
+      {
+        "checker": "checkers/check_networkx.py",
+        "result": "VALID",
+        "log": "verification/K6_K8e_n116.networkx.txt",
+        "date": "2026-11-24"
+      }
+    ],
+    "also_proves": [
+      {
+        "cell": "R(K7-e, K8-e)",
+        "g_avoids": "J7",
+        "complement_avoids": "J8",
+        "lower_bound": 117,
+        "previous_lower_bound": 115,
+        "previous_source": "R(6,7) >= 115 (S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table I [ExT]), since K7-e contains K6 and K8-e contains K7; Table IIIa prints no lower bound for this cell",
+        "upper_bound": 432,
+        "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [BZ3]",
+        "reason": "K7-e contains K6, so a graph with no K6 has no K7-e.",
+        "verification": [
+          {
+            "checker": "checkers/check.c",
+            "result": "VALID",
+            "log": "verification/K6_K8e_n116.K7e_K8e.c.txt",
+            "date": "2026-11-24"
+          },
+          {
+            "checker": "checkers/check_networkx.py",
+            "result": "VALID",
+            "log": "verification/K6_K8e_n116.K7e_K8e.networkx.txt",
+            "date": "2026-11-24"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "K6_K9e_n145",
+    "cell": "R(K6, K9-e)",
+    "g_avoids": "K6",
+    "complement_avoids": "J9",
+    "lower_bound": 146,
+    "vertices": 145,
+    "edges": 5075,
+    "files": {
+      "graph6": {
+        "path": "graphs/K6_K9e_n145.g6",
+        "sha256": "010b21103a6bcfb906f430dea153624fcc1bd1357c8001abecf03c9edb56999d"
+      },
+      "matrix": {
+        "path": "graphs/K6_K9e_n145.txt",
+        "sha256": "fb098384269e0c543cee0f752c4dde18aca94e0e136142f9886cd6e1efaac0e4"
+      }
+    },
+    "previous_lower_bound": 135,
+    "previous_source": "R(6,8) >= 135 (arXiv:2610.12122, after DS1.18; the survey's Table I has 134 [ExT]), since K9-e contains K8; Table IIIa prints no lower bound for this cell",
+    "upper_bound": 615,
+    "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [BZ3]",
+    "found": "2026-11-24",
+    "method_short": "Circulant on Z145 (multiplier orbits)",
+    "method": "Circulant graph on Z145 whose connection set is a union of orbits of the multiplier group generated by 7 (order 28), leaving 5 SAT variables; solved in 6 s.",
+    "page": "records/K6_K9e_n145.md",
+    "structure": {
+      "type": "abelian_cayley",
+      "group": [
+        145
+      ],
+      "connection_set": [
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ],
+        [
+          8
+        ],
+        [
+          11
+        ],
+        [
+          12
+        ],
+        [
+          14
+        ],
+        [
+          17
+        ],
+        [
+          18
+        ],
+        [
+          19
+        ],
+        [
+          20
+        ],
+        [
+          21
+        ],
+        [
+          25
+        ],
+        [
+          26
+        ],
+        [
+          27
+        ],
+        [
+          30
+        ],
+        [
+          31
+        ],
+        [
+          32
+        ],
+        [
+          35
+        ],
+        [
+          37
+        ],
+        [
+          39
+        ],
+        [
+          41
+        ],
+        [
+          43
+        ],
+        [
+          44
+        ],
+        [
+          45
+        ],
+        [
+          46
+        ],
+        [
+          47
+        ],
+        [
+          48
+        ],
+        [
+          56
+        ],
+        [
+          61
+        ],
+        [
+          65
+        ],
+        [
+          66
+        ],
+        [
+          68
+        ],
+        [
+          69
+        ],
+        [
+          72
+        ],
+        [
+          73
+        ],
+        [
+          76
+        ],
+        [
+          77
+        ],
+        [
+          79
+        ],
+        [
+          80
+        ],
+        [
+          84
+        ],
+        [
+          89
+        ],
+        [
+          97
+        ],
+        [
+          98
+        ],
+        [
+          99
+        ],
+        [
+          100
+        ],
+        [
+          101
+        ],
+        [
+          102
+        ],
+        [
+          104
+        ],
+        [
+          106
+        ],
+        [
+          108
+        ],
+        [
+          110
+        ],
+        [
+          113
+        ],
+        [
+          114
+        ],
+        [
+          115
+        ],
+        [
+          118
+        ],
+        [
+          119
+        ],
+        [
+          120
+        ],
+        [
+          124
+        ],
+        [
+          125
+        ],
+        [
+          126
+        ],
+        [
+          127
+        ],
+        [
+          128
+        ],
+        [
+          131
+        ],
+        [
+          133
+        ],
+        [
+          134
+        ],
+        [
+          137
+        ],
+        [
+          140
+        ],
+        [
+          142
+        ],
+        [
+          143
+        ]
+      ]
+    },
+    "invariants": {
+      "min_degree": 70,
+      "max_degree": 70,
+      "canonical_graph6_nauty": "~?AP}reeRbtU[]HycvG]MfTSvERbeMiie[VB?wF}@oE?NpWw?w~oMK~}?BWF~y|FAVsdSd]aMKeyDHLgl[cjSliHJXUwkQwZUtSidYlRcpdhkhEQtZecidT\\TPMcqnDdlhBcH]jYckaTiZXKqQXdkWqYu`\\YdSYlQiZ`sLLeWhFkyCXXKdZZOTTQPMZt?yYOlkv_@KK`jZZOAQQQRZuWAOoeDpo@iF?F~`poEv?wF}?wFw{?^bs?NpX?w~F\\o?NMFw?~iF?w]?B{^jppoMO~~?xVpo@hw~?~DwFFFO^{[]Cpo@qwwF~z?}?NtVFF?}dW?~{r_[[^HV~}?W~??FNN_NoB~wF~?\\A~?we{Bb{UFLo@~RFFwwsXSNp}w~w??xtYw~Fb?B~_JzCnppsgF?~Bs]cN~ob?wwwj[dG?~AWBb{]ItHOM@pv?FwyJYhPoMGW?~F|CxdN??zC^_B|PwwYMM@HwF?~IwwY]M?Agw?~wmeKkF?FyB~b_KUA|g?NolwwFwaRH}`oM@Y~Fw?ED|Eo?wFT{[[[GbX]iN}?K_Fww@jLSN`}@oY~?w?kqeRb?F~|?[[?BMmKojN~~o????FwB}@~ONoKFwF~Fa{IXfN?Fyo[^b_mYkbUj}@oqwFFwRpc{XY^ppzOF?~CJ`ZkRXF~wm?[[[IPlRhSaNp~F~w??EIdu}Abp}Mx?F~?gHuj`ohbeKxPxwrDEuIbqsTTSmQllQhPlag{lA[VBqM][JILkTFdgMMcMfDyRKSzagkz@YiclLTiTghvDPXuCVERLJeXJohvDPXuGKbMfQNKyYFSMH\\PZqdTTsTlTT`tBaVSVYQ\\E]`rsX[Mg[Qya{pb`JJpeZNK\\IQQ^g]YiciVTQllWyScc~PZQ[XKVM`ZrWyScc~Pf`pK]TWkmDyIjK\\ReJMYcjTTTTQmairFSxdTQxBei[spesTUWyfLLEKcu[pokyZIhdFdYjJeSdZXdQiimTRINItYiiQQvheKsX]TRINIt\\KUMu[HbYEOk~@{{o]]XKJZYcWlQQTNo^NKFfYccUvbBBX`Kp}Bxx_{vhB??wwDb~bbnY`pJjs~FF?M?NgF?~~fyScc{n~po?MM?LF~wFtLkTFeU@}Noww?J[^_^|F[TDef?~wx?@~u^?wwxlRINIimMM?ho@~TwwwFJTUWycqMMMIF~wE^{??^B@{{oPfw??rHFbBzXerGY{IXf@Xg{{nCjSb|iTlOY{IXf@TTZYn@M[H~YDnOL]DKr_hXrrV`kWrLpebskpc{XXXeRKrhJSihlQilTeKfbJJJSdY\\OZ`semDfKuWq]Kkk]cJpu@aW|RMe[ssejGtgfg[quXXSdZRTTiisejGtgfSjTUYg[`rhpdwkyRTcYsRXbsrMWGu[vB]`KNHSmvoJWVLLB`ojTYwliQQxIdu}@YdTTWYT@ubrbXeOrciVZwDheJJ`eKK[xgpKrXaxMt[MYbKXfDs]IjTWqQliQxMt[MYcidZDilBbp[YOnYD[fYmFLSJ`]akx`kVKdHXbs][J\\aWmVlBL@[rJTTSiTQlRr`ZkRDtZSdgTTgZeJQqYFKnMDmpKVeZKMaWn@E|gbcspXjbYfQisrHeQrpXojZSbQiiijbYfQitSdYatiigMrXPckmYTplRhTYsH]`ZMYK\\kvn}rr]^w?@~~_BAWW?K`cJZZZ~llll~??N~{?ccc_AQQQJZu^|nNXz{??~~oCK``?OeCoN~~oF~~~w??@~~~o??@~????",
+      "automorphism_group_size": 48720
+    },
+    "verification": [
+      {
+        "checker": "checkers/check.c",
+        "result": "VALID",
+        "log": "verification/K6_K9e_n145.c.txt",
+        "date": "2026-11-24"
+      }
+    ],
+    "prior_verification": "checked with jcheck.c and Sage (Cliquer) when found (2026-11-24)",
+    "also_proves": [
+      {
+        "cell": "R(K7-e, K9-e)",
+        "g_avoids": "J7",
+        "complement_avoids": "J9",
+        "lower_bound": 146,
+        "previous_lower_bound": 135,
+        "previous_source": "R(6,8) >= 135 (arXiv:2610.12122), since K7-e contains K6 and K9-e contains K8; Table IIIa prints no lower bound for this cell",
+        "upper_bound": 761,
+        "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [BZ3]",
+        "reason": "K7-e contains K6, so a graph with no K6 has no K7-e.",
+        "verification": [
+          {
+            "checker": "checkers/check.c",
+            "result": "VALID",
+            "log": "verification/K6_K9e_n145.K7e_K9e.c.txt",
+            "date": "2026-11-24"
+          }
+        ],
+        "prior_verification": "checked with jcheck.c and Sage (Cliquer) when found (2026-11-24)"
+      }
+    ]
+  },
+  {
+    "id": "K6e_K7e_n69",
+    "cell": "R(K6-e, K7-e)",
+    "g_avoids": "J6",
+    "complement_avoids": "J7",
+    "lower_bound": 70,
+    "vertices": 69,
+    "edges": 1061,
+    "files": {
+      "graph6": {
+        "path": "graphs/K6e_K7e_n69.g6",
+        "sha256": "8771cb5034e318f639b5217b702cdb5696d1a818219749acaa926ac29e62deb6"
+      },
+      "matrix": {
+        "path": "graphs/K6e_K7e_n69.txt",
+        "sha256": "7a7db86889582f74186e801a26b60dc1ee4f1eac9197782f89fbf0efab8338ea"
+      }
+    },
+    "previous_lower_bound": 66,
+    "previous_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, lower bound [VO]",
+    "upper_bound": 124,
+    "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [LidP]",
+    "found": "2026-11-20",
+    "method_short": "SAT ladder from a 68-vertex VO64 + 4 graph",
+    "method": "One exact SAT step (delete up to 3 vertices, add 4) from a 68-vertex (K6-e, K7-e)-graph made of Van Overberghe's 64-vertex graph plus 4 vertices (a second witness of R(K6-e, K7-e) >= 69, not the one published here). The step deleted base vertices 21 and 47 and one added vertex.",
+    "page": "records/K6e_K7e_n69.md",
+    "extends": {
+      "base": "bases/VO_J5J7n64.g6",
+      "base_sha256": "3e9b8b3ca9c473a81fd46fa1ead09b2cc2ba8f1f96eb0f325996c4cd64c05c8e",
+      "base_source": "https://github.com/Steven-VO/circulant-Ramsey/blob/master/RamseyGraphs/Jn/J5J7n64.g6",
+      "base_vertices": 64,
+      "base_vertices_deleted": [
+        21,
+        47
+      ],
+      "base_edges_removed": [],
+      "base_edges_added": [],
+      "added_vertices": {
+        "62": [
+          0,
+          1,
+          4,
+          9,
+          12,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          31,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          46,
+          51,
+          52,
+          53,
+          54,
+          58,
+          59,
+          61
+        ],
+        "63": [
+          0,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11,
+          12,
+          13,
+          15,
+          16,
+          17,
+          18,
+          19,
+          22,
+          23,
+          26,
+          28,
+          29,
+          30,
+          31,
+          33,
+          34,
+          38,
+          40,
+          41,
+          42,
+          44,
+          45,
+          48,
+          49,
+          52,
+          54,
+          57,
+          58,
+          60
+        ],
+        "64": [
+          1,
+          2,
+          3,
+          6,
+          7,
+          8,
+          10,
+          11,
+          12,
+          14,
+          15,
+          17,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          27,
+          28,
+          29,
+          30,
+          34,
+          35,
+          36,
+          37,
+          38,
+          41,
+          42,
+          45,
+          47,
+          50,
+          51,
+          53,
+          55,
+          58,
+          59,
+          60
+        ],
+        "65": [
+          0,
+          2,
+          3,
+          4,
+          6,
+          8,
+          10,
+          11,
+          12,
+          14,
+          16,
+          18,
+          20,
+          22,
+          23,
+          25,
+          29,
+          30,
+          32,
+          34,
+          35,
+          37,
+          39,
+          40,
+          43,
+          46,
+          47,
+          48,
+          49,
+          52,
+          53,
+          55,
+          57,
+          59
+        ],
+        "66": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          9,
+          10,
+          12,
+          14,
+          16,
+          18,
+          19,
+          20,
+          22,
+          25,
+          28,
+          30,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          39,
+          40,
+          42,
+          43,
+          45,
+          49,
+          50,
+          52,
+          53,
+          55,
+          56,
+          57,
+          59,
+          65
+        ],
+        "67": [
+          3,
+          4,
+          5,
+          6,
+          10,
+          11,
+          12,
+          14,
+          17,
+          18,
+          19,
+          20,
+          27,
+          29,
+          30,
+          31,
+          33,
+          35,
+          36,
+          40,
+          41,
+          42,
+          43,
+          44,
+          46,
+          47,
+          50,
+          51,
+          56,
+          57,
+          58,
+          59,
+          61
+        ],
+        "68": [
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          17,
+          18,
+          19,
+          20,
+          24,
+          27,
+          29,
+          30,
+          31,
+          32,
+          35,
+          36,
+          40,
+          42,
+          43,
+          44,
+          47,
+          51,
+          52,
+          56,
+          57,
+          58,
+          59,
+          61,
+          67
+        ]
+      }
+    },
+    "invariants": {
+      "min_degree": 29,
+      "max_degree": 38,
+      "canonical_graph6_nauty": "~?@DuADCODDcO[gSPVDUKKsmow_VjE]Vkl|Y|G[SNAWJgdwPcDSSgHSILfPMQHpD~E[OuQfbMp_qfHRoF?uDoocbDttlJdfLoa^GSEh`JlgdQGivIf_EjCPwAeJSDIbcHBoWQbds@BoraG[wPTMJGKGR^NIDExJgHgCYzaIhuV?QXCZ}`EaSbDBR}z?_DHMwJ_gsrTUokBqeHB}A|NQGHcVARtGaOSXR@YTZQoCtBHgzCSrwWd``@kdP{gibJwdceIA|DMIb[fQ_[YnKa`]C@eG`zN@gOEZ[hnUDt_ggSJiezPCfs[aCCNAQY}y?PuCG`w_p{BnN}wG[WMJK~Rv~}?B~{?F~~_bgGFywF~y^bKN_^o^o~{B}@DHczdve^}}?XRpat\\kv}~?",
+      "automorphism_group_size": 1
+    },
+    "verification": [
+      {
+        "checker": "checkers/check.c",
+        "result": "VALID",
+        "log": "verification/K6e_K7e_n69.c.txt",
+        "date": "2026-11-24"
+      },
+      {
+        "checker": "checkers/check_networkx.py",
+        "result": "VALID",
+        "log": "verification/K6e_K7e_n69.networkx.txt",
+        "date": "2026-11-24"
+      }
+    ]
   },
   {
     "id": "K6e_K7e_n68",
@@ -1353,6 +4273,7 @@
     "upper_bound": 124,
     "upper_source": "S. P. Radziszowski, Small Ramsey Numbers, Electron. J. Combin. DS1.18 (24 April 2026), Table IIIa, upper bound [LidP]",
     "found": "2026-11-18",
+    "method_short": "VO64 + 4 vertices by SAT",
     "method": "Exact SAT search (CaDiCaL through PySAT, cube-and-conquer with lexicographic symmetry breaking) for new vertices added to Van Overberghe's 64-vertex (K5-e, K7-e)-graph; vertices 0-63 and all their edges are unchanged. 4 vertices added, pairwise non-adjacent.",
     "extends": {
       "base": "bases/VO_J5J7n64.g6",
@@ -1553,6 +4474,8 @@
         "log": "verification/K6e_K7e_n68.sage.txt",
         "date": "2026-11-19"
       }
-    ]
+    ],
+    "page": "records/K6e_K7e_n68.md",
+    "superseded_by": "K6e_K7e_n69"
   }
 ]

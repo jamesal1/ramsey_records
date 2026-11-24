@@ -1,10 +1,11 @@
 cff-version: 1.2.0
 message: "If you use these graphs or bounds, please cite this dataset."
 type: dataset
-title: "New lower bounds for Ramsey numbers R(K_k - e, K_l - e) and R(K_k - e, K_l)"
+title: "New lower bounds for small Ramsey numbers"
 abstract: >-
-  Explicit graphs, with exact checkers, improving lower bounds in Table IIIa of
-  Radziszowski's dynamic survey Small Ramsey Numbers (DS1.18, April 2026).
+  Explicit graphs, with exact checkers, improving lower bounds for two-colour Ramsey numbers
+  of complete graphs and complete graphs minus an edge, compared with Radziszowski's dynamic
+  survey Small Ramsey Numbers (DS1.18, April 2026), Tables I and IIIa.
 version: "1.0.0"
 date-released: "2026-11-19"
 authors:
@@ -17,6 +18,7 @@ keywords:
   - lower bounds
   - graph theory
   - SAT
+  - Cayley graphs
 references:
   - type: article
     authors:

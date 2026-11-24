@@ -1,0 +1,9 @@
+# 2026-11-24  checkers/check.c graphs/K5_K12_n224.g6 K5 K12
+checker: check.c (bitset clique search; J_s via (s-2)-clique with 2 common neighbours)
+file: graphs/K5_K12_n224.g6
+vertices: 224
+edges: 9296
+G contains K5: no
+complement contains K12: no
+result: VALID
+proves: R(K5, K12) >= 225

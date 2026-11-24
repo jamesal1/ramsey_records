@@ -2,5 +2,9 @@
   "bases/VO_J5J7n64.g6": {
     "source": "https://github.com/Steven-VO/circulant-Ramsey/blob/master/RamseyGraphs/Jn/J5J7n64.g6",
     "sha256": "3e9b8b3ca9c473a81fd46fa1ead09b2cc2ba8f1f96eb0f325996c4cd64c05c8e"
+  },
+  "bases/VO_J4K10n48.g6": {
+    "source": "https://github.com/Steven-VO/circulant-Ramsey/blob/master/RamseyGraphs/Jn/J4K10n48.g6",
+    "sha256": "cc708d8677b2e9ee6439f82a44c07fc53638022e24a0e86cc635c5a9e5fa9ee7"
   }
 }

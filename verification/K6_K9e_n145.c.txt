@@ -1,0 +1,9 @@
+# 2026-11-24  checkers/check.c graphs/K6_K9e_n145.g6 K6 J9
+checker: check.c (bitset clique search; J_s via (s-2)-clique with 2 common neighbours)
+file: graphs/K6_K9e_n145.g6
+vertices: 145
+edges: 5075
+G contains K6: no
+complement contains J9: no
+result: VALID
+proves: R(K6, J9) >= 146

@@ -1,0 +1,9 @@
+# 2026-11-24  checkers/check.c graphs/K4e_K14_n75.g6 J4 J15
+checker: check.c (bitset clique search; J_s via (s-2)-clique with 2 common neighbours)
+file: graphs/K4e_K14_n75.g6
+vertices: 75
+edges: 600
+G contains J4: no
+complement contains J15: no
+result: VALID
+proves: R(J4, J15) >= 76

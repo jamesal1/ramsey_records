@@ -1,15 +1,31 @@
 {
-  "title": "New lower bounds for Ramsey numbers R(K_k - e, K_l - e) and R(K_k - e, K_l)",
+  "title": "New lower bounds for small Ramsey numbers",
   "version": "1.0.0",
   "upload_type": "dataset",
-  "description": "Explicit graphs, with exact checkers, improving lower bounds in Table IIIa of Radziszowski's dynamic survey Small Ramsey Numbers (DS1.18, April 2026). Each graph extends Van Overberghe's 64-vertex (K5-e, K7-e)-graph by vertices found with an exact SAT search. The release contains the graphs (graph6 and adjacency matrix), SHA-256 hashes, the exact difference from the base graph, three independent checkers and their outputs. Claude (Anthropic's AI assistant) was used to generate the code for the searches, the checkers and the tools.",
+  "description": "Explicit graphs, with exact checkers, improving lower bounds for two-colour Ramsey numbers of complete graphs and complete graphs minus an edge, compared with Radziszowski's dynamic survey Small Ramsey Numbers (DS1.18, April 2026), Tables I and IIIa. The graphs come from exact SAT extensions of published record graphs (mostly Van Overberghe's 64-vertex (K5-e, K7-e)-graph) and from SAT searches for Cayley graphs. The release contains the graphs (graph6 and adjacency matrix), SHA-256 hashes, the exact difference from each base graph or the Cayley connection set, a page per record describing how it was found, three independent checkers and their outputs. Claude (Anthropic's AI assistant) was used to generate the code for the searches, the checkers and the tools.",
   "creators": [
-    {"name": "Liu, James A."}
+    {
+      "name": "Liu, James A."
+    }
   ],
   "license": "Apache-2.0",
-  "keywords": ["Ramsey numbers", "lower bounds", "graph theory", "SAT"],
+  "keywords": [
+    "Ramsey numbers",
+    "lower bounds",
+    "graph theory",
+    "SAT",
+    "Cayley graphs"
+  ],
   "related_identifiers": [
-    {"identifier": "10.37236/21", "relation": "references", "scheme": "doi"},
-    {"identifier": "https://github.com/Steven-VO/circulant-Ramsey", "relation": "isDerivedFrom", "scheme": "url"}
+    {
+      "identifier": "10.37236/21",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/Steven-VO/circulant-Ramsey",
+      "relation": "isDerivedFrom",
+      "scheme": "url"
+    }
   ]
 }

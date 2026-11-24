@@ -1,0 +1,9 @@
+# 2026-11-24  checkers/check_networkx.py graphs/K4e_K11_n55.g6 J4 K11
+checker: check_networkx.py (networkx 2.8.8; J_s via two (s-1)-cliques sharing s-2 vertices)
+file: graphs/K4e_K11_n55.g6
+vertices: 55
+edges: 385
+G contains J4: no
+complement contains K11: no
+result: VALID
+proves: R(J4, K11) >= 56

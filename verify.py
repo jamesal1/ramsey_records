@@ -6,14 +6,17 @@ For each record this checks that:
   1. the graph files exist and match their SHA-256 hashes;
   2. the graph6 file and the 0/1 matrix describe the same graph, with the stated vertex and
      edge counts, and lower_bound = vertices + 1;
-  3. if the record extends a published base graph: the base matches its hash, and applying the
-     recorded diff to the base rebuilds the graph exactly;
-  4. every selected checker reports the graph valid (G avoids g_avoids, complement avoids
-     complement_avoids).
+  3. if the record extends a base graph: the base matches its hash, and applying the recorded
+     diff to the base (deleted base vertices, changed base edges, new vertices) rebuilds the
+     graph exactly;
+  4. if the record gives an abelian Cayley connection set: the Cayley graph it defines is
+     exactly the graph;
+  5. every selected checker reports the graph valid for every cell the record claims (its own
+     cell and each entry of also_proves).
 
 Usage:
-  python verify.py                       # checkers c and networkx
-  python verify.py --checkers c,networkx,sage
+  python verify.py                       # the C checker (fast on every record)
+  python verify.py --checkers c,networkx,sage   # slow on the largest graphs
   python verify.py --no-checkers         # hashes, files and diffs only
 Exit status 0 if everything holds, 1 otherwise.
 """
@@ -24,7 +27,7 @@ import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "tools"))
 from common import (  # noqa: E402
-    CHECKERS, ROOT, apply_diff, checker_available, decode_graph6, load_graph, load_records, run_checker,
+    CHECKERS, ROOT, apply_diff, cayley_edges, checker_available, decode_graph6, load_graph, load_records, run_checker,
     sha256_file,
 )
 
@@ -62,17 +65,26 @@ def check_record(rec, checkers):
             elif apply_diff(n, bedges, ext) != (n, edges):
                 errors.append("base + recorded diff does not rebuild the graph")
 
-    for c in checkers:
-        status, out = run_checker(c, path(rec["files"]["graph6"]["path"]), rec["g_avoids"], rec["complement_avoids"])
-        print(f"    {c:9s} {status}")
-        if status != "VALID":
-            errors.append(f"{c}: {status}\n{out}")
+    st = rec.get("structure") or {}
+    if st.get("type") == "abelian_cayley":
+        if cayley_edges(st["group"], st["connection_set"]) != (n, edges):
+            errors.append("the recorded Cayley connection set does not rebuild the graph")
+
+    claims = [rec] + rec.get("also_proves", [])
+    for cl in claims:
+        if cl["lower_bound"] != n + 1:
+            errors.append(f"{cl['cell']}: lower_bound {cl['lower_bound']} != vertices + 1")
+        for c in checkers:
+            status, out = run_checker(c, path(rec["files"]["graph6"]["path"]), cl["g_avoids"], cl["complement_avoids"])
+            print(f"    {c:9s} {status}  {cl['cell']}")
+            if status != "VALID":
+                errors.append(f"{c} on {cl['cell']}: {status}\n{out}")
     return errors
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--checkers", default="c,networkx", help="comma list from: " + ",".join(CHECKERS))
+    ap.add_argument("--checkers", default="c", help="comma list from: " + ",".join(CHECKERS))
     ap.add_argument("--no-checkers", action="store_true", help="skip the Ramsey checks")
     args = ap.parse_args()
 

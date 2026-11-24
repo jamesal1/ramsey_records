@@ -1,0 +1,9 @@
+# 2026-11-24  checkers/check.c graphs/K5e_K9_n80.g6 J5 J10
+checker: check.c (bitset clique search; J_s via (s-2)-clique with 2 common neighbours)
+file: graphs/K5e_K9_n80.g6
+vertices: 80
+edges: 1160
+G contains J5: no
+complement contains J10: no
+result: VALID
+proves: R(J5, J10) >= 81

@@ -1,0 +1,9 @@
+# 2026-11-24  checkers/check.c graphs/K4e_K12_n59.g6 J4 K12
+checker: check.c (bitset clique search; J_s via (s-2)-clique with 2 common neighbours)
+file: graphs/K4e_K12_n59.g6
+vertices: 59
+edges: 423
+G contains J4: no
+complement contains K12: no
+result: VALID
+proves: R(J4, K12) >= 60
